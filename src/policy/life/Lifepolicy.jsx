@@ -42,7 +42,7 @@ const useStyles = makeStyles({
     paddingBottom:'30px',
     background:'#f0f8fe',
     paddingLeft:'170px',
-    // backgroundImage:"url('./img/policubg.jpg')",
+    // backgroundImage:"url('./img/policubg.jpg     ')",
 
     
 },
