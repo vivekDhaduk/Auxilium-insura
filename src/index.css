@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.dropbtn {
+  font-size: 18px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdowncontent {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-top: 10px;
+}
+
+.dropdowncontent a {
+  color: black;
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  /* padding-bottom: 2px; */
+  /* justify-content: center; */
+  /* text-align: center; */
+  display: flex;
+  padding-top: 5px;
+}
+
+.dropdowncontent a:hover {background-color:lightgray}
+/* .home:hover{background-color:lightgray}
+.home{
+  text-decoration:'none';
+          color:'black';
+}
+ */
+.dropdown:hover .dropdowncontent {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #b3d9ff;
+}
+/* ------------------------------------------ */
+.dropdown2 {
+  position: relative;
+  display: flex;
+  
+}
+
+.dropbtn2 {
+  font-size: 22px;
+  margin-top: 15px;
+  /* background-color: #e6f2ff; */
+      /* // textAlign:"center", */
+      width:860px;
+      padding-left:20px;
+      /* text-decoration: underline; */
+      border-bottom: solid 1px black;
+      color: #489df3;
+}
+
+.dropdowncontent2 {
+  display: none;
+  position: absolute;
+  background-color: #e6f2ff;
+  border-radius: 25px;
+  box-shadow: 8px 8px 10px gray;
+  width: 600px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 1;
+  margin-top: 60px;
+  padding: 20px;
+  margin-left: 120px;
+}
+.dropdowncontent2 a {
+  color: black;
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  /* padding-bottom: 2px; */
+  /* justify-content: center; */
+  /* text-align: center; */
+  display: flex;
+  padding-top: 5px;
+}
+/* .dropdowncontent2 a:hover {background-color:#c2d6d6} */
+
+.dropdown2:hover .dropdowncontent2 {
+  display: block;
+}
+
+.dropdown2:hover .dropbtn2 {
+  background-color:#fff;
+}
+
+
+/* <  policy controler view detail long discrpition    > */
+
+.dropdown3 {
+  position: relative;
+  display: flex;
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
+.dropbtn3 {
+  font-size: 20px;
+  /* background-color: #e6f2ff; */
+      text-align:left;
+      width:350px;
+      padding-left:20px;
+      /* text-decoration: underline; */
+      border-bottom: solid 1px black;
+      color: rgb(77, 161, 240);
+      text-align: center;
+      margin-top: 10px;
+}
+
+.dropdowncontent3 {
+  display: none;
+  position: absolute;
+  background-color: #e6f2ff;
+  border-radius: 25px;
+  box-shadow: 8px 8px 10px gray;
+  width: 600px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 1;
+  margin-top: 30px;
+  padding: 20px;
+  margin-left: 120px;
+}
+.dropdowncontent3 a {
+  color: black;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  /* padding-bottom: 2px; */
+  /* justify-content: center; */
+  /* text-align: center; */
+  display: flex;
+  padding-top: 5px;
+}
+/* .dropdowncontent2 a:hover {background-color:#c2d6d6} */
+
+.dropdown3:hover .dropdowncontent3 {
+  display: block;
+}
+
+.dropdown3:hover .dropbtn3 {
+  background-color:#fff;
+}
+.viewdetails{
+  background-color:rgb(77, 161, 240);
+
+}
+.comparebtn{
+  background-color: var(--green);
+}

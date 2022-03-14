@@ -1,0 +1,277 @@
+
+
+/* Bordered form */
+/* form {
+    border: 3px solid #f1f1f1;
+    box-shadow: 8px 8px 15px gray;
+    margin-top: 100px;
+  } */
+  
+  /* Full-width inputs */
+  /* input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  } */
+  text{
+    margin-top: -10px;
+  }
+  /* Set a style for all buttons */
+  button {
+    background-color: #3498bd;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    /* width: 100%; */
+    /* margin-top: 10px; */
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+    border-radius: 10px;
+    margin-left: 60px;
+  }
+  .submitbtn{
+    width: auto;
+    padding: 10px 18px;
+    background-color: #3682f4;
+    border-radius: 10px;
+  }
+  .cancelbtn2 {
+    width: auto;
+    margin-left: 20px;
+    padding: 10px 18px;
+    background-color: #3498bd;
+    border-radius: 10px;
+  
+  }
+  
+  /* Center the avatar image inside this container */
+  .imgcontainer1 {
+    text-align: center;
+    margin: px 0 12px 0;
+    margin-top: -10px;
+  }
+  
+  /* Avatar image */
+  img.avatar {
+    width: 50%;
+    border-radius: 50%;
+  }
+  
+  /* Add padding to containers */
+ 
+  
+  /* The Forgot password text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+   
+  }
+  .psw{
+    text-decoration: none;
+    color: black;
+  }
+  .password{
+    text-decoration: none;
+    color: black;
+  }
+  /* .background{
+    background-color: rgb(252, 206, 120);
+    height: 660px;
+  } */
+ 
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+  
+  .main{
+        width: 400px;
+        justify-content: center;
+        /* background-image: url('../public/image/bg2.jpg'); */
+        background-color: white;
+        background-position: center;
+        /* border-left: 3px solid black; */
+       
+        /* background: transparent; */
+        /* margin-left: 600px; */
+        
+        /* margin-top: 100px; */
+       
+  }
+  
+  .full{
+     background-color:white;
+     /* height: 700px; */
+    /* height: 700px; */
+    width: 1200px;
+  margin-left: 160px;
+  margin-top: 90px
+  }
+  
+  .text{
+    border-radius: 10px;
+    width: 100%;
+    padding: 6px 20px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 20px;
+  }
+  
+  .main1{
+    display: flex;
+    justify-content: center;
+    box-shadow: 8px 8px  15px gray;
+   
+    
+  }
+  .gif{
+    /* margin-top: 100px; */
+    /* box-shadow: 8px 8px 15px gray;  */
+    height: 640px;
+    width: 640px;
+  }
+  
+  /* .basecont{
+    background-color: black;
+  } */
+  
+  .animatimg{
+    height: 450px;
+    width: 450px;
+    margin-top: 100px;
+  }
+  
+  .p{
+    text-align: center;
+  }
+ .rgif{
+   
+   padding-right: 150px;
+ }
+ .pcpass1{
+   height: 200px;
+   width: 350px;
+ }
+
+ .btt{
+   width: auto;
+   border-radius: 10px;
+ }
+ .btt1{
+   width: auto;
+   background-color: #f44336;
+   margin-left: 20px;
+   border-radius: 10px;
+
+ }
+ .container1{
+   margin-top: -10px;
+ }
+.bcontainer{
+  /* margin: 10px; */
+  box-sizing:content-box;
+  box-shadow: 8px 8px  15px gray;
+  margin-left: 15px;
+  justify-content: center;
+}
+.bmain{
+  /* margin: 10px; */
+  /* margin-top: 10px; */
+  padding: 10px;
+
+}
+.text1{
+  border-radius: 10px;
+    width: 100%;
+    padding: 6px 20px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.text2{
+  background-color:#3498bd;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+  width: 100%;
+  padding: 6px 20px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.otp{
+  display: flex;
+ 
+}
+.changepassbtn{
+  display: flex;
+}
+
+.adv {
+  border: solid 0.5px black;
+  margin-left: 100px;
+  padding: 5px;
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+  background: white;
+  /* // background:'#e6f2ff'; */
+  /* box-shadow: 5px 5px 15px gray; */
+  cursor:pointer;
+  /* //   */
+}
+.adv:hover{
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px gray;
+
+}
+
+.adv2{
+  border: solid 1px black;
+  margin-left: 50px;
+  padding: 5px;
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+  background: #fff;
+  /* // background:'#e6f2ff'; */
+        /* box-shadow: 3px 3px 10px gray, */
+}
+.adv2:hover{
+  transform: scale(1.2);
+  box-shadow: 3px 3px 10px gray;
+
+}
+
+.adv3:hover{
+  transform: scale(1.2);
+}
