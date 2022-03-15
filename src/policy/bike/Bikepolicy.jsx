@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Header from '../../header/Header'
 import { url } from "../../api";
 import BikeHeaderpolicy from './BikeHeaderpolicy'
-// import axios from "axios"
+import axios from "axios"
 const useStyles = makeStyles({
   
   compare:{
@@ -196,6 +196,33 @@ const Bikepolicy = () => {
       });
     });
   }
+    // search //
+
+    const [search,setSearch]= useState([]);
+
+
+    const searchlist = async (e)=>{
+      const body = {
+        keyword:e
+      }
+      console.log("body,",body);
+      const search1 = await axios.post(`${url}/policy/BikeSearch`,body).then((res)=>{
+        console.log(res.data.Data)
+        setSearch(res.data.Data)
+  
+      }).catch((err)=>{
+        console.log(err)
+      })
+    }
+  
+    useEffect(()=>{
+      searchlist();
+    },[])
+  
+    const onChange=(e)=>{
+      searchlist(e.target.value)
+    }
+
 
   return (
     <>
@@ -206,9 +233,36 @@ const Bikepolicy = () => {
       <div className={classes.container}>
       <div className={classes.serchheader}>              
       <div><p className={classes.serchp}>Find Best Policy</p></div>
-              <div className={classes.serch}><input type="text" placeholder="enter policy details"/></div>
+              <div className={classes.serch}><input type="text" class="form-control search" placeholder="enter policy details" onChange={onChange}/></div>
               <div className={classes.icon}> <i class="fa fa-search fa-2x"></i></div>
             </div>
+            {search.map((search) => (
+          <div className={classes.policy}>
+                <div className={classes.main}>  
+                    <div className={classes.policycontent}>      
+                    <div className={classes.logos}>                              
+                                <a className={classes.a} href="https://wa.me/9510542252">  <img className={classes.wp} src="../images/whatsapp.png" alt="" /> <p className={classes.p}>Share</p> </a>                         
+                                <img className={classes.img} src={search.logo} alt="" />
+                            </div>
+                          <div className={classes.element}>
+                              <p>{search.shortdiscription}</p>
+                              <h4>Claims Settled {search.cover}</h4>
+                          </div>
+                          <div className={classes.element}>
+                               <h4>For  {search.timeduration} </h4>
+                          </div>
+                              <div className={classes.element}>
+                              <button className={classes.primumamount}>₹{search.primumamount}</button>
+                              <button class="viewdetails"  onClick={() => { navigate(`/Lifeview/${search._id}`);}}>View Details</button>
+                          </div>
+                    </div>
+                    <div class="dropdown3">
+                          <div class="dropbtn3">Why is this the best plan for you ? </div>
+                          <div class="dropdowncontent3"> <a>{search.longdiscription}</a></div>
+                    </div>                   
+                </div>                     
+          </div>          
+        ))}
           {data.map((item) => (
             <div className={classes.policy}>
                   <div className={classes.main}>  

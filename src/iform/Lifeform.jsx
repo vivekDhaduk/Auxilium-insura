@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../header/Header";
 import { url } from "../api";
+import Lifechart from "./Lifechart";
 
 
 const useStyles = makeStyles({
@@ -117,6 +118,23 @@ const useStyles = makeStyles({
         borderRadius: "10px",
         cursor: "pointer",
         marginTop: "10px",
+        cursor:'pointer',
+      },
+      chart:{
+        height: "100%",
+        width: "100%",
+        // display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop:"150px",
+        marginLeft:"130px"
+      },
+      apply2: {
+        fontSize: "30px",
+        padding: "px 20px",
+        border: 0,
+        color: "#8884d8",
+        // textDecoration: "underline black",
         cursor:'pointer',
       },
        
@@ -300,6 +318,10 @@ const Lifeform = () => {
           </div>
         </div>
       </div>
+      {/* <div className={classes.chart}>
+        <h1 className={classes.apply2}>Help you to find Top Policy</h1>
+      <Lifechart/>
+      </div> */}
     </>
   )
 }

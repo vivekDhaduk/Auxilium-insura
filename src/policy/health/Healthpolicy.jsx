@@ -6,6 +6,7 @@ import Header from '../../header/Header'
 import { url } from "../../api";
 // import '../index.css'
 import PolicyHealthHeader from './PolicyHealthHeader';
+import axios from "axios";
 
 // import axios from "axios"
 const useStyles = makeStyles({
@@ -195,6 +196,34 @@ const Healthpolicy = () => {
     });
   }
 
+
+  // search //
+
+  const [search,setSearch]= useState([]);
+
+
+  const searchlist = async (e)=>{
+    const body = {
+      keyword:e
+    }
+    console.log("body,",body);
+    const search1 = await axios.post(`${url}/policy/HealthSearch`,body).then((res)=>{
+      console.log(res.data.Data)
+      setSearch(res.data.Data)
+
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }
+
+  useEffect(()=>{
+    searchlist();
+  },[])
+
+  const onChange=(e)=>{
+    searchlist(e.target.value)
+  }
+
   return (
     <>
       <Header />
@@ -204,9 +233,37 @@ const Healthpolicy = () => {
       <div className={classes.container}>
       <div className={classes.serchheader}>              
       <div><p className={classes.serchp}>Find Best Policy</p></div>
-              <div className={classes.serch}><input type="text" placeholder="enter policy details"/></div>
+              <div className={classes.serch}><input type="text" class="form-control search" placeholder="enter policy details" onChange={onChange}/></div>
               <div className={classes.icon}> <i class="fa fa-search fa-2x"></i></div>
             </div>
+            {search.map((item1) => (
+            <div className={classes.policy}>
+                  <div className={classes.main}>  
+                      <div className={classes.policycontent}>      
+                      <div className={classes.logos}>                              
+                                <a className={classes.a} href="https://wa.me/9510542252">  <img className={classes.wp} src="../images/whatsapp.png" alt="" /> <p className={classes.p}>Share</p> </a>                         
+                                <img className={classes.img} src={item1.logo} alt="" />
+                            </div>
+                            <div className={classes.element}>
+                                <p>{item1.shortdiscription}</p>
+                                <h4>Claims Settled {item1.cover}</h4>
+                            </div>
+                            <div className={classes.element}>
+                                 <h4>For  {item1.timeduration} </h4>
+                            </div>
+                                <div className={classes.element}>
+                                <button className={classes.primumamount}>₹{item1.primumamount}</button>
+                                <button class="viewdetails"  onClick={() => { navigate(`/Healthview/${item1._id}`);}}>View Details</button>
+                            </div>
+                      </div>
+                      {/* <div class="dropdown3">
+                            <div class="dropbtn3">Why is this the best plan for you ? </div>
+                            <div class="dropdowncontent3"> <a>{item.longdiscription}</a></div>
+                      </div>                    */}
+                  </div>                     
+            </div>          
+          ))} 
+            
           {data.map((item) => (
             <div className={classes.policy}>
                   <div className={classes.main}>  

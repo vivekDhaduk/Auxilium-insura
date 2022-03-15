@@ -28,6 +28,8 @@ import Lifepolicy from './policy/life/Lifepolicy'
 import Carpolicy from './policy/car/Carpolicy';
 import PolicyCarHeader from './policy/car/PolicyCarHeader';
 
+import Lifechart from './iform/Lifechart';
+
 
 
 
@@ -76,6 +78,8 @@ function App() {
 
         <Route exact path='/Carpolicy' element={<Carpolicy/>}/>
         <Route exact path='/PolicyCarHeader' element={<PolicyCarHeader/>}/>
+
+
 
 
 

@@ -193,6 +193,7 @@ const Healthform = () => {
                   <input
                     className={classes.input}
                     type="text"
+                    
                     name="gender"
                     value={data.gender}
                     onChange={OnInput}
