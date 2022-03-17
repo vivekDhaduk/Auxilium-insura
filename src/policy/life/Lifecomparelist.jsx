@@ -9,9 +9,9 @@ import PolicylifehHeader from './PolicylifeHeader';
 // import axios from "axios"
 const useStyles = makeStyles({
   wp:{
-    height:25,
-    width:25,
-    paddingRight:"10px",
+    height:30,
+    width:30,
+    paddingRight:"px",
     marginTop:"-5px"
     // marginTop:'5px'
   },
@@ -55,7 +55,7 @@ const useStyles = makeStyles({
 main:{
   // border:"solid 1px black",
   borderRadius:"5px",
-  padding:"10px",
+  padding:"2px",
   textAlign:"center",
   width:"900px",
   // display:"flex",
@@ -77,7 +77,7 @@ policy:{
 },
 logos:{
   textAlign:"center",
-  marginLeft:"25px",
+  // marginLeft:"25px",
   width:"200px"
 },
   element:{
@@ -103,18 +103,13 @@ logos:{
     textDecoration:"none",
 
   },
-  wp:{
-    height:30,
-    width:30,
-    paddingRight:"10px",
-    marginTop:"-5px"
-    // marginTop:'5px'
-  },
+  
   p:{
     textDecoration:"none",
     fontSize:"20px",
-    marginTop:"-1px",
-    color:"green"
+    marginTop:"-4px",
+    color:"blue",
+    marginLeft:"10px"
   }
   
   
@@ -178,9 +173,9 @@ const Lifecomparelist = () => {
           <div className={classes.policy}>
                 <div className={classes.main}>  
                     <div className={classes.policycontent}> 
-                    <input type="checkbox" onClick={()=>{navigate(`/Lifecompare/${item._id}`)}}/>
-                    <div className={classes.logos}>                              
-                                <a className={classes.a} href="https://wa.me/9510542252">  <img className={classes.wp} src="./img/whatsapp.png" alt="" /> <p className={classes.p}>Share</p> </a>                         
+                    <input type="checkbox"  onClick={()=>{navigate(`/Lifecompare/${item._id}`)}}/>
+                    <div className={classes.logos}>                             
+                                <a className={classes.a} href="https://wa.me/9510542252"> <p className={classes.p}>Compare</p>    </a>                         
                                 <img className={classes.img} src={item.logo} alt="" />
                             </div>
                           <div className={classes.element}>
@@ -208,3 +203,6 @@ const Lifecomparelist = () => {
 };
 
 export default Lifecomparelist;
+
+
+// navigate(`/Lifecompare/${item._id}`)

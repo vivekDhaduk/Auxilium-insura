@@ -16,8 +16,8 @@ const Footer = () => {
                     <h2 class="footerfont">Auxilium <span> Insura</span></h2>
                     <div class="row">
                         <div class="col-sm-6">
-                            <p class="footerfont">E104 Dharti -2 , Nr Silverstar Mall Chandlodia - Ahmedabad
-                                <br/>Zip - 382481</p>
+                            <p class="footerfont">A-2003 Auxilium Insura.lmtd, pelediuum mall Yogi cwok - Surat
+                                <br/>Zip - 395006</p>
                         </div>
                         <div class="col-sm-6">
                             <ul>
@@ -32,8 +32,8 @@ const Footer = () => {
                     <h2  class="footerfont">Advisor <span> Detail</span></h2>
                     <div class="row">
                         <div class="col-sm-6">
-                            <p>E104 Dharti -2 , Nr Silverstar Mall Chandlodia - Ahmedabad
-                                <br/>Zip - 382481</p>
+                            <p>A-2003 Auxilium Insura.lmtd, pelediuum mall Yogi cwok - Surat
+                                <br/>Zip - 395006</p>
                         </div>
                         <div class="col-sm-6">
                             <ul>

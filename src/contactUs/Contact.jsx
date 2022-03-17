@@ -45,9 +45,9 @@ const Contact = () => {
                                         <h3>Address</h3>
                                         <div>
                                             <i class="icon ti-home"></i>
-                                            <p>E104 Dharti -2 , Nr Silverstar Mall
-                                                <br/>Chandlodia - Ahmedabad
-                                                <br/>Zip - 382481</p>
+                                            <p> A-2003 Auxilium Insura.lmtd, pelediuum mall
+                                                <br/>Yogi cwok - Surat
+                                                <br/>Zip - 395006</p>
                                             <p class="social">
                                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -64,11 +64,11 @@ const Contact = () => {
                                         <h3>Contact Details</h3>
                                         <div>
                                             <i class="icon fa fa-phone"></i>
-                                            <p>+91 123 456 7890</p>
+                                            <p>+91 9510542252</p>
                                         </div>
                                         <div>
                                             <i class="icon ti-email"></i>
-                                            <p><a href="#">info@bootstrapmart.com</a></p>
+                                            <p><a href="#">auxiliuminsura@gmail.com</a></p>
                                         </div>
                                     </div>
                                 </div>

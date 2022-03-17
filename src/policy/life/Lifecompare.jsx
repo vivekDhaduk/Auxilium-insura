@@ -134,6 +134,8 @@ const Lifecompare = () => {
   const {id} = useParams();
   const abc = id;
 
+  // const id1 = localStorage.setItem(abc)
+
   // policy 111111
   
 
@@ -157,8 +159,12 @@ const Lifecompare = () => {
     fetch(`${url}/policy/lifecompare1/${abc}`).then((result) => {
      
       result.json().then((resp) => {
-        console.log(resp.data.data)
+        console.log(resp)
         SetData(resp.data);
+
+        if (resp.status === 200 ) {
+          localStorage.setItem("cid",resp.data._id)
+      }
           
       });
     });

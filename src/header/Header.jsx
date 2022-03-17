@@ -75,7 +75,7 @@ function getList() {
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                         <i class="fa fa-bars"></i>
                     </button> 
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="">
                         Auxilium<span> Insura</span>
                     </a>
                     <p>Call Us Now <b>+91 9510542252</b></p>

@@ -29,7 +29,12 @@ import Carpolicy from './policy/car/Carpolicy';
 import PolicyCarHeader from './policy/car/PolicyCarHeader';
 
 import Lifechart from './iform/Lifechart';
-
+import Lcompare from './policy/life/Lcompare';
+import Lifecomparelist from './policy/life/Lifecomparelist';
+import Lifecomparelist2 from './policy/life/Lifecomparelist2';
+import Finalacompare from './policy/life/Finalacompare'
+import Lifecompare from './policy/life/Lifecompare';
+import Lifecompare2 from './policy/life/Lifecompare2';
 
 
 
@@ -79,7 +84,14 @@ function App() {
         <Route exact path='/Carpolicy' element={<Carpolicy/>}/>
         <Route exact path='/PolicyCarHeader' element={<PolicyCarHeader/>}/>
 
+{/* ==================================== lifecompare route ========================= */}
 
+        <Route exact path='/Lcompare' element={<Lcompare/>}/>
+        <Route exact path='/Finalacompare' element={<Finalacompare/>}/>
+        <Route exact path='/Lifecomparelist' element={<Lifecomparelist/>}/>
+        <Route exact path='/Lifecomparelist2' element={<Lifecomparelist2/>}/>
+        <Route exact path='/Lifecompare/:id' element={<Lifecompare/>}/>
+        <Route exact path='/Lifecompare2/:id' element={<Lifecompare2/>}/>
 
 
 

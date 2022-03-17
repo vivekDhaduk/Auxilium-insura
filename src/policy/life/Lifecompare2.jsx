@@ -132,7 +132,8 @@ const Lifecompare2 = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const {id} = useParams();
-  const abc = id;
+  const xyz = id;
+  // const id2 = localStorage.setItem(xyz)
 
   // policy 111111
   
@@ -154,11 +155,14 @@ const Lifecompare2 = () => {
   function getList() {
 
     
-    fetch(`${url}/policy/lifecompare1/${abc}`).then((result) => {
+    fetch(`${url}/policy/lifecompare1/${xyz}`).then((result) => {
      
       result.json().then((resp) => {
-        console.log(resp.data.data)
+        console.log(resp)
         SetData(resp.data);
+        if (resp.status === 200 ) {
+          localStorage.setItem("cid2",resp.data._id)
+      }
         // SetLogo(resp.data.logo);
         // SetPrimumamount(resp.data.primumamount);
         // SetTimeduration(resp.data.timeduration);
