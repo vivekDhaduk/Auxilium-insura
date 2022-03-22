@@ -4,14 +4,16 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../header/Header";
 import { url } from "../../api";
-import PolicylifehHeader from './PolicylifeHeader';
+import PolicyCarHeader from "./PolicyCarHeader";
+// import PolicyHealthHeader from "./PolicyHealthHeader";
+// import PolicylifehHeader from './PolicylifeHeader';
 
 // import axios from "axios"
 const useStyles = makeStyles({
   wp:{
     height:30,
     width:30,
-    // paddingRight:"10px",
+    paddingRight:"px",
     marginTop:"-5px"
     // marginTop:'5px'
   },
@@ -77,7 +79,7 @@ policy:{
 },
 logos:{
   textAlign:"center",
-  marginLeft:"25px",
+  // marginLeft:"25px",
   width:"200px"
 },
   element:{
@@ -109,14 +111,14 @@ logos:{
     fontSize:"20px",
     marginTop:"-4px",
     color:"blue",
-    // marginLeft:"5px"
+    marginLeft:"10px"
   }
   
   
  
 });
 
-const Lifecomparelist2 = () => {
+const Carcomaparelist = () => {
   const navigate = useNavigate();
   const classes = useStyles();
 
@@ -145,7 +147,7 @@ const Lifecomparelist2 = () => {
   function getList() {
 
     
-    fetch(`${url}/policy/viewlife`).then((result) => {
+    fetch(`${url}/policy/viewcar`).then((result) => {
       result.json().then((resp) => {
         console.log(resp.data);
 
@@ -166,16 +168,16 @@ const Lifecomparelist2 = () => {
   return (
     <><Header />
     <div className={classes.PolicyHealthHeader}> 
-    <PolicylifehHeader/>
+    <PolicyCarHeader/>
     </div>
     <div className={classes.container}>
         {data.map((item) => (
           <div className={classes.policy}>
                 <div className={classes.main}>  
                     <div className={classes.policycontent}> 
-                    <input type="checkbox" onClick={()=>{navigate(`/Lifecompare2/${item._id}`)}}/>
+                    <input type="checkbox"  onClick={()=>{navigate(`/Carcompare2/${item._id}`)}}/>
                     <div className={classes.logos}>                             
-                                <a className={classes.a} href=""> <p className={classes.p} onClick={()=>{navigate(`/Lifecompare2/${item._id}`)}}>Compare</p>    </a>                         
+                                <a className={classes.a} href=""> <p className={classes.p} onClick={()=>{navigate(`/Carcompare2/${item._id}`)}}>Compare</p>    </a>                         
                                 <img className={classes.img} src={item.logo} alt="" />
                             </div>
                           <div className={classes.element}>
@@ -202,4 +204,7 @@ const Lifecomparelist2 = () => {
   );
 };
 
-export default Lifecomparelist2;
+export default Carcomaparelist;
+
+
+// navigate(`/Lifecompare/${item._id}`)

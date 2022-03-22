@@ -233,7 +233,7 @@ const Carpolicy = () => {
                           </div>
                               <div className={classes.element}>
                               <button className={classes.primumamount}>₹{search.primumamount}</button>
-                              <button class="viewdetails"  onClick={() => { navigate(`/Lifeview/${search._id}`);}}>View Details</button>
+                              {/* <button class="viewdetails"  onClick={() => { navigate(`/Lifeview/${search._id}`);}}>View Details</button> */}
                           </div>
                     </div>
                     <div class="dropdown3">

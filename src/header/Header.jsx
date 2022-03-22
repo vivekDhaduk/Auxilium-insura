@@ -86,7 +86,7 @@ function getList() {
                             <a href="" onClick={()=>{navigate('/')}}>Home</a>
                         </li>
                         <li>
-                            <a href="#product" onClick={()=>{navigate('/')}} >Insurence Product</a>
+                            <a href="#product" class="scroll" onClick={()=>{navigate('/')}} >Insurence Product</a>
                         </li>
                         <li >
                             <a href="" onClick={()=>{navigate('/contact')}}>Contact</a>

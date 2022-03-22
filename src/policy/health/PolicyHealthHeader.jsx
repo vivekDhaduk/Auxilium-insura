@@ -96,7 +96,7 @@ const PolicyHealthHeader = () => {
               </div>
               {/* <img className={classes.img} src="./img/compare.png" alt="" />  */}
           
-              <button className={classes.comparebtn}  onClick={() => { navigate("/Healthcompare");}}>  <img className={classes.img} src="../images/compare.png" alt="" /> <cp> Compare</cp></button>
+              <button className={classes.comparebtn}  onClick={() => { navigate("/Healthcompareist1");}}>  <img className={classes.img} src="../images/compare.png" alt="" /> <cp> Compare</cp></button>
             </div>
           </>
         );

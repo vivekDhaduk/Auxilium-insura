@@ -100,7 +100,7 @@ const BikeHeaderpolicy = () => {
           </div>
           {/* <img className={classes.img} src="./img/compare.png" alt="" />  */}
           
-                <button className={classes.comparebtn}  onClick={() => { navigate("/Bikecompare");}}>  <img className={classes.img} src="../images/compare.png" alt="" /> <cp> Compare</cp></button>
+                <button className={classes.comparebtn}  onClick={() => { navigate("/Bikecomparelist");}}>  <img className={classes.img} src="../images/compare.png" alt="" /> <cp> Compare</cp></button>
               
               </div>
         </>

@@ -97,7 +97,7 @@ const PolicyCarHeader = () => {
           </div>
           {/* <img className={classes.img} src="./img/compare.png" alt="" />  */}
           
-          <button className={classes.comparebtn}  onClick={() => { navigate("/Carcompare");}}>  <img className={classes.img} src="../images/compare.png" alt="" /> <cp> Compare</cp></button>
+          <button className={classes.comparebtn}  onClick={() => { navigate("/Carcomparelist");}}>  <img className={classes.img} src="../images/compare.png" alt="" /> <cp> Compare</cp></button>
               </div>
         </>
       );

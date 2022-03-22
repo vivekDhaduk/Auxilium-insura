@@ -111,7 +111,8 @@ logos:{
   serchheader:{
     display:"flex",
     marginTop:"20px",
-    marginBottom:"-10px"
+    marginBottom:"-10px",
+    marginLeft:"30px"
   },
   serch:{
     width:"200px",
@@ -209,6 +210,23 @@ const onChange=(e)=>{
             <div><p className={classes.serchp}>Find Best Policy</p></div>
               <div className={classes.serch}><input type="text" class="form-control search" placeholder="enter policy details" onChange={onChange}/></div>
               <div className={classes.icon}> <i class="fa fa-search fa-2x"></i></div>
+
+              <div class="dropdown">
+                    <div  class="dropbtn">| &#160; Sort By Price<i  class="fa fa-sort-amount-asc "></i></div>
+                    <div class="dropdowncontent">
+                        <a><i class="fa fa-arrow-up"></i> Low to High</a>
+                        <a><i class="fa fa-arrow-down"></i> High to Low</a>
+                    </div>
+              </div>
+
+              <div class="dropdown">
+                    <div  class="dropbtn">| &#160; &#160; Sort By Claim Settlement<i  class="fa fa-sort-amount-asc "></i></div>
+                    <div class="dropdowncontent">
+                        <a><i class="fa fa-arrow-down"></i> High to Low</a>
+                        <a><i class="fa fa-arrow-up"></i> Low to High</a>
+                    </div>
+              </div>
+              
             </div>
             {search.map((search) => (
           <div className={classes.policy}>

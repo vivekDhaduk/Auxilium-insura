@@ -11,119 +11,67 @@ import axios from 'axios';
 
 const useStyles = makeStyles({
   basecontainer:{
-    marginTop:"70px"
+    marginTop:"90px",
+    background:"#f0f8fe",
+    width:"1510px",
+    padding:"50px"
   },
-  comparebutton:{
-    marginTop:"20px",
-    marginLeft:"300px"
-  },
-  wp:{
-    height:25,
-    width:25,
-    paddingRight:"10px",
-    marginTop:"-5px"
-    // marginTop:'5px'
-  },
-  wpa:{
+  logo:{
     display:"flex",
-    fontSize:"18px",
-    color:"green"
-  },
-
-  compare:{
-    display:"flex",
-    marginLeft:"700px",
-    // height:"30px",
-    width:"250px",
     background:"#fff",
-
+    marginLeft:"-20px",
+    width:"1450px",
+    height:"120px",
+    // paddingTop:"30px",
+    boxShadow:"8px 8px 20px lightgray",
   },
-  policycontent:{
-    marginLeft:"-100px",
-    display:"flex",
-    marginTop:'30px',
-    background:"#fff",
-    paddingTop:"30px"
-    
+  backtopolicy:{
+    marginTop:"40px",
+    color:"#00b2ce",
+    marginLeft:"200px"
+  },
+  backtopolicy2:{
+    marginTop:"40px",
+    color:"#fff",
+    marginLeft:"00px"
+  },
+  companylogo:{
+    marginLeft:"270px",
+  },
+  companylogo2:{
+    marginLeft:"270px",
   },
   img:{
-    height:'80px',
-    width:'160px',
-    marginTop:"10px"
+    height:"100px",
+    width:"150px",
+    background:"#fff"
   },
-  container:{
-    marginTop:'-30px',
-    paddingTop:'20px',
-    paddingBottom:'30px',
-    background:'#f0f8fe',
-    paddingLeft:'170px',
-    // backgroundImage:"url('./img/policubg.jpg')",
+  policyditails:{
+    background:"#fff",
+    margin:"50px",
+    padding:"30px",
+    width:"1200px",
+    marginLeft:"100px",
+    boxShadow:"8px 8px 20px lightgray",
 
+  },
+  table:{
+    textAlign:"center"
+  },
+  tr:{
     
-},
-main:{
-  // border:"solid 1px black",
-  borderRadius:"5px",
-  padding:"10px",
-  textAlign:"center",
-  width:"900px",
-  // display:"flex",
-  marginTop:"30px",
-  // height:"200px",
-  boxShadow: "5px 5px 20px lightgray",
-},
-policycontent:{
-  display:"flex",
-  width:"900px",
-  height:"160px",
-  paddingTop:"30px",
-  background:"#fff",
-
-},
-policy:{
-  // boxShadow: "5px 5px 15px lightgray",
-
-},
-logos:{
-  textAlign:"center",
-  marginLeft:"25px",
-  width:"200px"
-},
-  element:{
-    textAlign:"center",
-    marginLeft:"25px",
-    width:"200px",
-    marginTop:"15px"
   },
-  primumamount:{
-    // height:"30px",
-    color:"black",
-    width:"100px",
-    background:"#b3d9ff", 
-    fontSize:"18px"
+  td:{
+    width:"400px",
+    height:"80px",
+    paddingLeft:"200px"
   },
-  PolicyHealthHeader:{
-    marginTop:"60px",
-    background:'#f0f8fe',
-
+  td2:{
+    width:"400px",
+    paddingLeft:"200px"
   },
-  a:{
-    display:"flex",
-    textDecoration:"none",
-
-  },
-  wp:{
-    height:30,
-    width:30,
-    paddingRight:"10px",
-    marginTop:"-5px"
-    // marginTop:'5px'
-  },
-  p:{
-    textDecoration:"none",
-    fontSize:"20px",
-    marginTop:"-1px",
-    color:"green"
+  th:{
+    paddingLeft:"50px"
   }
 
 })
@@ -171,70 +119,109 @@ const Lifecompare = () => {
   }
 
 
-  // const [data,setData]=useState([])
-  //  useEffect(()=>{
-  //     getlist();
-  //  },[]);
-
-  //  const getlist = async ()=>{
-  //    const data1 = await axios .get(`${url}/policy/lifecompare1/${abc}`).then((res)=>{
-  //      console.log(res.data.data)
-  //     //  setData(res.data)
-  //    }).catch((err)=>{
-  //      console.log(err)
-  //    })
-  //  }
-
-
   
-  // policy 2222222
-
-
-  // policy 333333
 
   return (
     <>
         <Header/>
         <div className={classes.basecontainer}>
-        {/* <PolicylifehHeader /> */}
-
-            <div className={classes.main}>
-                <div> <button className={classes.comparebutton}  onClick={() => { navigate("/Lifecomparelist2");}}>Add onr more Policy</button> </div>
-                
-               
-                            
-                    <div className={classes.policy}>
-                <div className={classes.main}>  
-                    <div className={classes.policycontent}>      
-                    <div className={classes.logos}>                              
-                                <a className={classes.a} href="https://wa.me/9510542252">  <img className={classes.wp} src="../img/whatsapp.png" alt="" /> <p className={classes.p}>Share</p> </a>                         
-                                <img className={classes.img} src={data.logo} alt="" />
-                            </div>
-                          <div className={classes.element}>
-                              <p>{data.shortdiscription}</p>
-                              <h4>Claims Settled {data.cover}</h4>
-                          </div>
-                          <div className={classes.element}>
-                               <h4>For  {data.timeduration} </h4>
-                          </div>
-                              <div className={classes.element}>
-                              <button className={classes.primumamount}>₹{data.primumamount}</button>
-                              <button class="viewdetails">View Details</button>
-                          </div>
-                    </div>
-                    <div class="dropdown3">
-                          <div class="dropbtn3">Why is this the best plan for you ? </div>
-                          <div class="dropdowncontent3"> <a>{data.longdiscription}</a></div>
-                    </div>                   
-                </div>                     
-          </div>  
-         
-
+        <div className={classes.logo}>
+            <div>
+                <h4 className={classes.backtopolicy} onClick={() => { navigate("/Lifepolicy");}}> ⇐ back To Policy</h4>
+            </div>
+            <div className={classes.companylogo}>
+                <img className={classes.img} src={data.logo} alt="" />
+            </div>
+            <div className={classes.companylogo2}>
+                {/* <img className={classes.img} src={data2.logo} alt="" /> */}
+                <button className={classes.backtopolicy2}  onClick={() => { navigate("/Lifecomparelist2");}} >  +  Add Policy</button>
 
             </div>
         </div>
+        <div className={classes.policyditails}>
+            <table className={classes.table}>
+              <tr className={classes.tr}>
+                <th className={classes.th}><h4>Premium</h4></th>
+                <td className={classes.td}><button className={classes.primumamount}>₹  {data.primumamount}</button></td>
+                {/* <td className={classes.td2}><button className={classes.primumamount}>₹  {data2.primumamount}</button></td> */}
+              </tr>
+              <tr className={classes.tr}>
+                <th className={classes.th}><h4>Max Coverage Upto</h4></th>
+                <td className={classes.td}><h4>For  {data.timeduration} </h4></td>
+                {/* <td className={classes.td2}><h4>For  {data2.timeduration} </h4></td> */}
+              </tr>
+              <tr className={classes.tr}>
+                <th className={classes.th}><h4>Claim Settlement Ratio</h4></th>
+                <td className={classes.td}><h4>{data.cover}</h4></td>
+                {/* <td className={classes.td2}><h4>{data2.cover}</h4></td> */}
+              </tr>
+              <tr className={classes.tr}>
+                <th className={classes.th}><h4>Medical Required</h4></th>
+                <td className={classes.td}><h4>Tele Medical</h4></td>
+                {/* <td className={classes.td2}><h4>Physical Medical</h4></td> */}
+              </tr>
+              <tr className={classes.tr}>
+                <th className={classes.th}><h4>Free Look Period</h4></th>
+                <td className={classes.td}><h4>30 Days</h4></td>
+                {/* <td className={classes.td2}><h4>30 Days</h4></td> */}
+              </tr>
+              <tr className={classes.tr}>
+                <th className={classes.th}><h4>Tax Benefit</h4></th>
+                <td className={classes.td}><h4>Yes</h4></td>
+                {/* <td className={classes.td2}><h4>Yes</h4></td> */}
+              </tr>
+              <tr className={classes.tr}>
+                <th className={classes.th}><h4>Details</h4></th>
+                <td className={classes.td}><h4>{data.shortdiscription}</h4></td>
+                {/* <td className={classes.td2}><h4>{data2.shortdiscription}</h4></td> */}
+              </tr>
+            </table>
+          </div>
+      </div>
+        
     </>
   )
 }
 
 export default Lifecompare
+
+
+
+// <div className={classes.basecontainer}>
+//         {/* <PolicylifehHeader /> */}
+
+//             <div className={classes.main}>
+//                 <div> <button className={classes.comparebutton}  onClick={() => { navigate("/Lifecomparelist2");}}>Add onr more Policy</button> </div>
+                
+               
+                            
+//                     <div className={classes.policy}>
+//                 <div className={classes.main}>  
+//                     <div className={classes.policycontent}>      
+//                     <div className={classes.logos}>                              
+//                                 <a className={classes.a} href="https://wa.me/9510542252">  <img className={classes.wp} src="../img/whatsapp.png" alt="" /> <p className={classes.p}>Share</p> </a>                         
+//                                 <img className={classes.img} src={data.logo} alt="" />
+//                             </div>
+//                           <div className={classes.element}>
+//                               <p>{data.shortdiscription}</p>
+//                               <h4>Claims Settled {data.cover}</h4>
+//                           </div>
+//                           <div className={classes.element}>
+//                                <h4>For  {data.timeduration} </h4>
+//                           </div>
+//                               <div className={classes.element}>
+//                               <button className={classes.primumamount}>₹{data.primumamount}</button>
+//                               <button class="viewdetails">View Details</button>
+//                           </div>
+//                     </div>
+//                     <div class="dropdown3">
+//                           <div class="dropbtn3">Why is this the best plan for you ? </div>
+//                           <div class="dropdowncontent3"> <a>{data.longdiscription}</a></div>
+//                     </div>                   
+//                 </div>                     
+//           </div>  
+         
+
+
+//             </div>
+//         </div>

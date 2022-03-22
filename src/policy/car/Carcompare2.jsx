@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from '../../header/Header'
-import Lifepolicy from './Lifepolicy'
+// import Lifepolicy from './Lifepolicy'
 import { makeStyles } from "@material-ui/core";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect , useState} from "react";
-import PolicylifehHeader from './PolicylifeHeader';
+// import PolicylifehHeader from './PolicylifeHeader';
 import { url } from "../../api";
 import axios from 'axios';
 
@@ -76,11 +76,11 @@ const useStyles = makeStyles({
 
 })
 
-const Lifecompare = () => {
+const Carcompare = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const {id} = useParams();
-  const xyz = id;
+  const abc = id;
 
   // const id1 = localStorage.setItem(abc)
 
@@ -104,7 +104,7 @@ const Lifecompare = () => {
   function getList() {
 
     
-    fetch(`${url}/policy/lifecompare1/${xyz}`).then((result) => {
+    fetch(`${url}/policy/carcompare2/${abc}`).then((result) => {
      
       result.json().then((resp) => {
         console.log(resp)
@@ -127,14 +127,14 @@ const Lifecompare = () => {
         <div className={classes.basecontainer}>
         <div className={classes.logo}>
             <div>
-                <h4 className={classes.backtopolicy} onClick={() => { navigate("/Lifepolicy");}}> ⇐ back To Policy</h4>
+                <h4 className={classes.backtopolicy} onClick={() => { navigate("/Carpolicy");}}> ⇐ back To Policy</h4>
             </div>
             <div className={classes.companylogo}>
                 <img className={classes.img} src={data.logo} alt="" />
             </div>
             <div className={classes.companylogo2}>
                 {/* <img className={classes.img} src={data2.logo} alt="" /> */}
-                <button className={classes.backtopolicy2}  onClick={() => { navigate("/Finalacompare");}} > Now you can Proside</button>
+                <button className={classes.backtopolicy2}  onClick={() => { navigate("/Finalcarcompare");}} >Now you can proside</button>
 
             </div>
         </div>
@@ -183,7 +183,7 @@ const Lifecompare = () => {
   )
 }
 
-export default Lifecompare
+export default Carcompare
 
 
 

@@ -55,33 +55,21 @@ const PolicylifeHeader = () => {
     const navigate = useNavigate();
 
 
-  const [data, SetData] = useState([]);
-
-  const [age, Setage] = useState("");
-  const [annualincome, Setannualincome] = useState("");
-  const [city, Setcity] = useState("");
-
+  const [header, SetHeader] = useState([]);
   useEffect(() => {
-    getList();
+    getheader();
   }, []);
-
-  function getList() {
-
+  function getheader() {
     fetch(`${url}/LifeIns/user/view`).then((result) => {
       result.json().then((resp) => {
         // console.log(resp.data);
-
-        SetData(resp.data);
-
-        Setage(resp.data[0].age[0]);
-        Setannualincome(resp.data[0].annualincome[0]);
-        Setcity(resp.data[0].city[0]);
+        SetHeader(resp.data);
       });
     });
   }
   return (
     <>
-     {data.map((val) => {
+     {header.map((val) => {
         return (
           <>
             <div className={classes.main}>
@@ -90,14 +78,13 @@ const PolicylifeHeader = () => {
             <h2 className={classes.h2}>Find Best Insurence For</h2>
 
               <p className={classes.p}>|	&#160;  Name - {val.fullname}</p>
-              <p className={classes.p}> |	&#160; Age - {val.age}</p>
+              <p className={classes.p}>|	&#160;  Age - {val.age}</p>
               <p className={classes.p}>|	&#160;  Income - {val.annualincome}</p>
-
-              <p className={classes.p}>|	&#160; City - {val.city}</p>
+              <p className={classes.p}>|	&#160;  City - {val.city}</p>
             </div>
             {/* <img className={classes.img} src="./img/compare.png" alt="" />  */}
           
-            <button className={classes.comparebtn}  onClick={() => { navigate("/Lcompare");}}>  <img className={classes.img} src="../images/compare.png" alt="" /> <cp> Compare</cp></button>
+            <button className={classes.comparebtn}  onClick={() => { navigate("/Lifecomparelist");}}>  <img className={classes.img} src="../images/compare.png" alt="" /> <cp> Compare</cp></button>
             </div>
           </>
         );

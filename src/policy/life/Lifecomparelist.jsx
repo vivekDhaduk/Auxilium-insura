@@ -175,7 +175,7 @@ const Lifecomparelist = () => {
                     <div className={classes.policycontent}> 
                     <input type="checkbox"  onClick={()=>{navigate(`/Lifecompare/${item._id}`)}}/>
                     <div className={classes.logos}>                             
-                                <a className={classes.a} href="https://wa.me/9510542252"> <p className={classes.p}>Compare</p>    </a>                         
+                                <a className={classes.a} href=""> <p className={classes.p} onClick={()=>{navigate(`/Lifecompare/${item._id}`)}}>Compare</p>    </a>                         
                                 <img className={classes.img} src={item.logo} alt="" />
                             </div>
                           <div className={classes.element}>

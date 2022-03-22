@@ -1,12 +1,12 @@
 import React from 'react'
-import Lifecompare from './Lifecompare'
-import Lifecompare2 from './Lifecompare2'
+// import Lifecompare from './Lifecompare'
+// import Lifecompare2 from './Lifecompare2'
 import { url } from '../../api'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { makeStyles } from '@material-ui/core'
 import { useNavigate } from 'react-router-dom'
-import PolicylifeHeader from './PolicylifeHeader'
+// import PolicylifeHeader from './PolicylifeHeader'
 
 
 const useStyles = makeStyles({
@@ -71,7 +71,7 @@ const useStyles = makeStyles({
   }
 
 })
-const Finalacompare = () => {
+const Finalbikecompare = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const abc = localStorage.getItem("cid")
@@ -79,7 +79,7 @@ const Finalacompare = () => {
   const home=()=>{
     localStorage.removeItem("cid")
     localStorage.removeItem("cid2")
-    navigate("/Lifepolicy")
+    navigate("/Bikepolicy")
 }
 
   const [data, SetData] = useState([]);
@@ -87,10 +87,13 @@ const Finalacompare = () => {
     getList();
   }, []);
   function getList() {
-    fetch(`${url}/policy/lifecompare1/${abc}`).then((result) => {
+
+    
+    fetch(`${url}/policy/bikecompare3/${abc}`).then((result) => {
+     
       result.json().then((resp) => {
         console.log(resp)
-        SetData(resp.data);    
+        // SetData(resp.data);    
       });
     });
   }
@@ -102,29 +105,29 @@ const Finalacompare = () => {
     getList2();
   }, []);
   function getList2() {
-    fetch(`${url}/policy/lifecompare1/${xyz}`).then((result) => {
+    fetch(`${url}/policy/bikecompare3/${xyz}`).then((result) => {
       result.json().then((resp) => {
         console.log(resp)
-        SetData2(resp.data);    
+        // SetData2(resp.data);    
       });
     });
   }
   // ======================= basic policy detail start ==========================
-  const [header, SetHeader] = useState([]);
-  useEffect(() => {
-    getheader();
-  }, []);
-  function getheader() {
-    fetch(`${url}/LifeIns/user/view`).then((result) => {
-      result.json().then((resp) => {
-        console.log("header data",resp.data);
-        SetHeader(resp.data);
-      });
-    });
-  }
+//   const [header, SetHeader] = useState([]);
+//   useEffect(() => {
+//     getheader();
+//   }, []);
+//   function getheader() {
+//     fetch(`${url}BikeIns/user/view`).then((result) => {
+//       result.json().then((resp) => {
+//         console.log("header data",resp.data);
+//         SetHeader(resp.data);
+//       });
+//     });
+//   }
   return (
     <>
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    {/* <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -144,16 +147,16 @@ const Finalacompare = () => {
                             <a href="">BASIC DETAILS</a>
                         </li>
                         <li>
-                            <a href="">|	&#160;  Name - {val.fullname}</a>
+                            <a href="">|&#160;  Name - {val.fullname}</a>
                         </li>
                         <li>
-                            <a href="">|	&#160;  Age - {val.age}</a>
+                            <a href="">|&#160;  Age - {val.age}</a>
                         </li>
                         <li >
-                            <a href="">|	&#160;  Income - {val.annualincome}</a>
+                            <a href="">|&#160;  Income - {val.annualincome}</a>
                         </li>
                         <li>
-                            <a href="">|	&#160;  City - {val.city}</a>
+                            <a href="">|&#160;  City - {val.city}</a>
                         </li>
                     </ul>
                </div>
@@ -193,9 +196,9 @@ const Finalacompare = () => {
                 <td className={classes.td2}><h4>{data2.cover}</h4></td>
               </tr>
               <tr className={classes.tr}>
-                <th className={classes.th}><h4>Medical Required</h4></th>
-                <td className={classes.td}><h4>Tele Medical</h4></td>
-                <td className={classes.td2}><h4>Physical Medical</h4></td>
+                <th className={classes.th}><h4>IDV</h4></th>
+                <td className={classes.td}><h4>{data.idv}</h4></td>
+                <td className={classes.td2}><h4>{data2.idv}</h4></td>
               </tr>
               <tr className={classes.tr}>
                 <th className={classes.th}><h4>Details</h4></th>
@@ -214,13 +217,13 @@ const Finalacompare = () => {
               </tr>
             </table>
           </div>
-      </div>
+      </div> */}
 
     </>
   )
 }
 
-export default Finalacompare
+export default Finalbikecompare
 
 
 

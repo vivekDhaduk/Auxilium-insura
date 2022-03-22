@@ -1,12 +1,12 @@
 import React from 'react'
-import Lifecompare from './Lifecompare'
-import Lifecompare2 from './Lifecompare2'
+// import Lifecompare from './Lifecompare'
+// import Lifecompare2 from './Lifecompare2'
 import { url } from '../../api'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { makeStyles } from '@material-ui/core'
 import { useNavigate } from 'react-router-dom'
-import PolicylifeHeader from './PolicylifeHeader'
+// import PolicylifeHeader from './PolicylifeHeader'
 
 
 const useStyles = makeStyles({
@@ -71,7 +71,7 @@ const useStyles = makeStyles({
   }
 
 })
-const Finalacompare = () => {
+const Finalhealthcompare = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const abc = localStorage.getItem("cid")
@@ -79,7 +79,7 @@ const Finalacompare = () => {
   const home=()=>{
     localStorage.removeItem("cid")
     localStorage.removeItem("cid2")
-    navigate("/Lifepolicy")
+    navigate("/Healthpolicy")
 }
 
   const [data, SetData] = useState([]);
@@ -87,7 +87,7 @@ const Finalacompare = () => {
     getList();
   }, []);
   function getList() {
-    fetch(`${url}/policy/lifecompare1/${abc}`).then((result) => {
+    fetch(`${url}/policy/healthcompare1/${abc}`).then((result) => {
       result.json().then((resp) => {
         console.log(resp)
         SetData(resp.data);    
@@ -102,7 +102,7 @@ const Finalacompare = () => {
     getList2();
   }, []);
   function getList2() {
-    fetch(`${url}/policy/lifecompare1/${xyz}`).then((result) => {
+    fetch(`${url}/policy/healthcompare1/${xyz}`).then((result) => {
       result.json().then((resp) => {
         console.log(resp)
         SetData2(resp.data);    
@@ -115,7 +115,7 @@ const Finalacompare = () => {
     getheader();
   }, []);
   function getheader() {
-    fetch(`${url}/LifeIns/user/view`).then((result) => {
+    fetch(`${url}/HealthIns/user/view`).then((result) => {
       result.json().then((resp) => {
         console.log("header data",resp.data);
         SetHeader(resp.data);
@@ -144,16 +144,16 @@ const Finalacompare = () => {
                             <a href="">BASIC DETAILS</a>
                         </li>
                         <li>
-                            <a href="">|	&#160;  Name - {val.fullname}</a>
+                            <a href="">|&#160;  Name - {val.fullname}</a>
                         </li>
                         <li>
-                            <a href="">|	&#160;  Age - {val.age}</a>
+                            <a href="">|&#160;  Age - {val.age}</a>
                         </li>
                         <li >
-                            <a href="">|	&#160;  Income - {val.annualincome}</a>
+                            <a href="">|&#160;  Income - {val.annualincome}</a>
                         </li>
                         <li>
-                            <a href="">|	&#160;  City - {val.city}</a>
+                            <a href="">|&#160;  City - {val.city}</a>
                         </li>
                     </ul>
                </div>
@@ -220,7 +220,7 @@ const Finalacompare = () => {
   )
 }
 
-export default Finalacompare
+export default Finalhealthcompare
 
 
 
