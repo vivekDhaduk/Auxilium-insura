@@ -194,7 +194,7 @@ console.log("setdata",data)
                     <h2 className={classes.name}>{data.name}</h2>
                     <div className={classes.cover}>
                         <h3>Claims Settled</h3>
-                        <h3 className={classes.h2}>{data.cover}</h3>
+                        <h3 className={classes.h2}>{data.cover} %</h3>
                     </div>
                     <div >
                         <a href='https://wa.me/9510542252'><label className={classes.whatsapp}><img className={classes.wp} src='../images/whatsapp.png'/><p className={classes.wptext}>Share</p></label></a>

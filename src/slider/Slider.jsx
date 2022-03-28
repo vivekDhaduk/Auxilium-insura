@@ -31,7 +31,7 @@ const Slider = () => {
   return (
     <>
 
-     <div className="container-slider">
+     <div id='home' className="container-slider">
             {dataSlider.map((obj, index) => {
                 return (
                     

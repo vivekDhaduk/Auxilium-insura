@@ -2,8 +2,8 @@ import React from 'react'
 
 const Ourpartner = () => {
   return (
-    <div>
-    <section class="partners">
+    <div >
+    <section class="partners" id='partner'>
             <div class="container">
                 <div class="row">
                     <div class="parner-slider-mn">

@@ -214,20 +214,20 @@ const onChange=(e)=>{
               <div class="dropdown">
                     <div  class="dropbtn">| &#160; Sort By Price<i  class="fa fa-sort-amount-asc "></i></div>
                     <div class="dropdowncontent">
-                        <a><i class="fa fa-arrow-up"></i> Low to High</a>
-                        <a><i class="fa fa-arrow-down"></i> High to Low</a>
+                        <a onClick={() => { navigate('/PrimumAcd')}}><i class="fa fa-arrow-up"></i> Low to High</a>
+                        <a onClick={() => { navigate('/PrimumDcd')}}><i class="fa fa-arrow-down"></i> High to Low</a>
                     </div>
               </div>
 
               <div class="dropdown">
                     <div  class="dropbtn">| &#160; &#160; Sort By Claim Settlement<i  class="fa fa-sort-amount-asc "></i></div>
                     <div class="dropdowncontent">
-                        <a><i class="fa fa-arrow-down"></i> High to Low</a>
-                        <a><i class="fa fa-arrow-up"></i> Low to High</a>
+                        <a onClick={() => { navigate('/CoverDcd')}}><i class="fa fa-arrow-down"></i> High to Low</a>
+                        <a onClick={() => { navigate('/CoverAcd')}}><i class="fa fa-arrow-up"></i> Low to High</a>
                     </div>
               </div>
               
-            </div>
+            </div>  
             {search.map((search) => (
           <div className={classes.policy}>
                 <div className={classes.main}>  
@@ -238,14 +238,14 @@ const onChange=(e)=>{
                             </div>
                           <div className={classes.element}>
                               <p>{search.shortdiscription}</p>
-                              <h4>Claims Settled {search.cover}</h4>
+                              <h4>Claims Settled {search.cover} %</h4>
                           </div>
                           <div className={classes.element}>
                                <h4>For  {search.timeduration} </h4>
                           </div>
                               <div className={classes.element}>
-                              <button className={classes.primumamount}>₹{search.primumamount}</button>
-                              <button class="viewdetails"  onClick={() => { navigate(`/Lifeview/${search._id}`);}}>View Details</button>
+                              <button onClick={() => { navigate(`/Paymentlife/${search._id}`);}}className={classes.primumamount}>₹{search.primumamount}</button>
+                              <a href="#viewlife" onClick={() => { navigate(`/Lifeview/${search._id}`);}}><button class="viewdetails"  >View Details</button></a>
                           </div>
                     </div>
                     <div class="dropdown3">
@@ -265,20 +265,21 @@ const onChange=(e)=>{
                             </div>
                           <div className={classes.element}>
                               <p>{item.shortdiscription}</p>
-                              <h4>Claims Settled {item.cover}</h4>
+                              <h4>Claims Settled {item.cover} %</h4>
                           </div>
                           <div className={classes.element}>
                                <h4>For  {item.timeduration} </h4>
                           </div>
                               <div className={classes.element}>
-                              <button className={classes.primumamount}>₹{item.primumamount}</button>
+                              <button  onClick={() => { navigate(`/Paymentlife/${item._id}`);}} className={classes.primumamount}>₹{item.primumamount}</button>
                               <button class="viewdetails"  onClick={() => { navigate(`/Lifeview/${item._id}`);}}>View Details</button>
                           </div>
                     </div>
                     <div class="dropdown3">
                           <div class="dropbtn3">Why is this the best plan for you ? </div>
                           <div class="dropdowncontent3"> <a>{item.longdiscription}</a></div>
-                    </div>                   
+                    </div>  
+
                 </div>                     
           </div>          
         ))}      

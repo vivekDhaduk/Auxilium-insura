@@ -1,12 +1,13 @@
 import React from 'react'
-import Lifecompare from './Lifecompare'
-import Lifecompare2 from './Lifecompare2'
 import { url } from '../../api'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { makeStyles } from '@material-ui/core'
 import { useNavigate } from 'react-router-dom'
-import PolicylifeHeader from './PolicylifeHeader'
+// import PolicylifeHeader from './PolicylifeHeader'
+import { PureComponent } from 'react';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
 
 
 const useStyles = makeStyles({
@@ -27,7 +28,7 @@ const useStyles = makeStyles({
   },
   backtopolicy:{
     marginTop:"40px",
-    color:"#00b2ce",
+    color:"##000",
     marginLeft:"200px"
   },
   companylogo:{
@@ -68,6 +69,12 @@ const useStyles = makeStyles({
   th:{
     paddingLeft:"50px",
     width:"200px"
+  },
+  // charts:{
+  //   display:"flex"
+  // },
+  charth3:{
+    marginBottom:"30px"
   }
 
 })
@@ -76,11 +83,34 @@ const Finalacompare = () => {
   const navigate = useNavigate();
   const abc = localStorage.getItem("cid")
   const xyz = localStorage.getItem("cid2")
+  const primumamt1 = localStorage.getItem("primumamt1")
+  const primumamt2 = localStorage.getItem("primumamt2")
+  const cover1 = localStorage.getItem("cover1")
+  const cover2 = localStorage.getItem("cover2")
+  const name1 = localStorage.getItem("name1")
+  const name2 = localStorage.getItem("name2")
   const home=()=>{
     localStorage.removeItem("cid")
     localStorage.removeItem("cid2")
     navigate("/Lifepolicy")
 }
+
+const chartdata = [
+  
+  {
+    
+    name:name1,
+    primumamount: primumamt1,
+    cover:cover1,
+  },
+  {
+    name: name2,
+    primumamount: primumamt2,
+    cover:cover2,
+   
+  },
+];
+
 
   const [data, SetData] = useState([]);
   useEffect(() => {
@@ -212,9 +242,64 @@ const Finalacompare = () => {
                 <td className={classes.td}><h4>Yes</h4></td>
                 <td className={classes.td2}><h4>Yes</h4></td>
               </tr>
+              
             </table>
+            <div className={classes.charts}>
+                <div>
+                  <h3 className={classes.charth3}>Primumamount</h3>
+                  <ResponsiveContainer width="70%" aspect={3}>
+                  <BarChart
+                    width={20}
+                    height={300}
+                    data={chartdata}
+                    margin={{
+                      top: 5,
+                      right: 430,
+                      // left: 220,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                  
+                    
+                    <Bar dataKey="primumamount" fill="#8884d8" />
+
+                  </BarChart>
+                  
+                </ResponsiveContainer>
+              </div>
+              <div>
+                  <h3 className={classes.charth3}>Cover</h3>
+                  <ResponsiveContainer width="70%" aspect={3}>
+                  <BarChart
+                    width={20}
+                    height={300}
+                    data={chartdata}
+                    margin={{
+                      top: 5,
+                      right: 430,
+                      // left: 220,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                  
+                    <Bar dataKey="cover" fill="#82ca9d" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              </div>
           </div>
       </div>
+      
 
     </>
   )

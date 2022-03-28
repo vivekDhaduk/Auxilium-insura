@@ -141,8 +141,8 @@ const Lifeview = () => {
 
     const classes = useStyles();
   const navigate = useNavigate();
-  const {id} = useParams();
-  const abc = id;
+    const {id} = useParams();
+    const abc = id;
 
   // policy 111111
   const dataa = [
@@ -183,7 +183,7 @@ console.log("setdata",data)
 
 <Header/>
 {/* =====================policy basic detail start ============================x */}
-        <div className={classes.basecontainer}>
+        <div className={classes.basecontainer} id="viewlife">
         <PolicylifehHeader />
             <ResponsiveContainer aspect={3} width="100%">
                 <div className={classes.policy}>
@@ -193,10 +193,13 @@ console.log("setdata",data)
                     <h2 className={classes.name}>{data.name}</h2>
                     <div className={classes.cover}>
                         <h3>Claims Settled</h3>
-                        <h3 className={classes.h2}>{data.cover}</h3>
+                        <h3 className={classes.h2}>{data.cover} %</h3>
                     </div>
                     <div >
+                    
                     <a href='https://wa.me/9510542252'><label className={classes.whatsapp}><img className={classes.wp} src='../images/whatsapp.png'/><p className={classes.wptext}>Share</p></label></a>
+                    <button  onClick={() => { navigate(`/Contactlife/${data._id}`);}}>Need help ?</button>
+                    
                     </div>
                 </div>
             </ResponsiveContainer>

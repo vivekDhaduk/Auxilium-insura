@@ -6,8 +6,11 @@ import '../css/icons.css'
 import '../css/owl.carousel.css'
 import '../css/ie7/ie7.css'
 import '../css/bootstrep.css'
+import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer>
         <div class="container footer">
@@ -26,7 +29,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <a href="#" class="btn-default">Contact Us</a>
+                    <a href="#" class="btn-default " onClick={()=>{navigate('/contact')}}>Contact Us</a>
                 </div>
                 <div class="col-md-5 col-lg-5 col-md-offset-2 col-lg-offset-2">
                     <h2  class="footerfont">Advisor <span> Detail</span></h2>
@@ -42,19 +45,19 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <a href="#" class="btn-default">Contact Advisor</a>
+                    <a href="#"  class="btn-default" onClick={() => { navigate('/Advisor')}}>Contact Advisor</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-8 col-lg-8">
                     <ul class="footer-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="#">Compnies represented</a></li>
-                        <li><a href="contact-us.html">Contact us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Products</a></li>
+                        <li><a href="#home" onClick={()=>{navigate('/')}}>Home</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="" onClick={()=>{navigate('/Blog')}}>Blog</a></li>
+                        <li><a href="#partner" onClick={()=>{navigate('/')}}>Compnies represented</a></li>
+                        <li><a href="" onClick={()=>{navigate('/contact')}}>Contact us</a></li>
+                        <li><a href="#Services" onClick={()=>{navigate('/')}}>Services</a></li>
+                        <li><a href="#product" onClick={()=>{navigate('/')}}>Products</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2">

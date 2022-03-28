@@ -57,17 +57,17 @@ const Welcome = () => {
                         <h2>Welcome to Auxilium Insura</h2>
                         <p>Auxilium Insura is now online insurence purchase system that provide you the best policy and the term life plans. we also provide the best security. Now you can contact our Auxilium Insura's advisor and get the information that you want you to know. the best way to find your insurence is now on  Auxilium Insura</p>
                         <ul class="row">
-                            <li class="col-sm-4">
+                            <li class="col-sm-4 welcome">
                                 <i class="fa fa-life-ring"></i>
                                 <h3>24x7 Support</h3>
                                 <p>Now we provide the 24 x 7 support from the Auxilium Insura </p>
                             </li>
-                            <li class="col-sm-4">
+                            <li class="col-sm-4 welcome">
                                 <i class="ti-marker-alt"></i>
                                 <h3>Easy Claim system</h3>
                                 <p>Auxilium Insura Give you the easiest claim system</p>
                             </li>
-                            <li class="col-sm-4">
+                            <li class="col-sm-4 welcome">
                                 <i class="ti-email"></i>
                                 <h3>Get Started with us</h3>
                                 <p>contact us on an auxiliuminsura@gmail.com</p>

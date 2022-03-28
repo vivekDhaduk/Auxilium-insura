@@ -2,8 +2,8 @@ import React from 'react'
 
 const Ourservice = () => {
   return (
-    <div>
-        <section class="services">
+    <div >
+        <section class="services" id='Services'>
             <h2 class="text-center">Our Best Services</h2>
             <div class="container">
                 <div class="row">

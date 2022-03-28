@@ -75,7 +75,7 @@ function getList() {
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                         <i class="fa fa-bars"></i>
                     </button> 
-                    <a class="navbar-brand" href="">
+                    <a onClick={()=>{navigate('/')}} class="navbar-brand" href="#home">
                         Auxilium<span> Insura</span>
                     </a>
                     <p>Call Us Now <b>+91 9510542252</b></p>
@@ -83,7 +83,7 @@ function getList() {
                 <div class="collapse navbar-collapse navbar-main-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="" onClick={()=>{navigate('/')}}>Home</a>
+                            <a href="#home" onClick={()=>{navigate('/')}}>Home</a>
                         </li>
                         <li>
                             <a href="#product" class="scroll" onClick={()=>{navigate('/')}} >Insurence Product</a>

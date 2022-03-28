@@ -49,6 +49,29 @@ import Bikecompare2 from './policy/bike/Bikecompare2';
 import Bikecomparelist from './policy/bike/Bikecomparelist';
 import Bikecomparelist2 from './policy/bike/Bikecomparelist2';
 import Finalbikecompare from './policy/bike/Finalbikecompare';
+import PrimumAcd from './policy/life/sort/PrimumAcd';
+import PrimumDcd from './policy/life/sort/PrimumDcd';
+import CoverAcd from './policy/life/sort/CoverAcd';
+import CoverDcd from './policy/life/sort/CoverDcd';
+import BikePrimumAcd from './policy/bike/sort/BikePrimumAcd';
+import BikePrimumDcd from './policy/bike/sort/BikePrimumDcd';
+import BikeCoverAcd from './policy/bike/sort/BikeCoverAcd';
+import BikeCoverDcd from './policy/bike/sort/BikeCoverDcd';
+import Healthcoveracd from './policy/health/sort/Healthcoveracd';
+import Healthcoverdcd from './policy/health/sort/Healthcoverdcd';
+import Healthprimumacd from './policy/health/sort/Healthprimumacd';
+import Healthprimumdcd from './policy/health/sort/Healthprimumdcd';
+import Carcoveracd from './policy/car/sort/Carcoveracd';
+import Carcoverdcd from './policy/car/sort/Carcoverdcd';
+import Carprimumacd from './policy/car/sort/Carprimumacd';
+import Carprimumdcd from './policy/car/sort/Carprimumdcd';
+import Paymentlife from './policy/life/payment/Paymentlife';
+import PaymentHealth from './policy/health/payment/PaymentHealth';
+import PaymentCar from './policy/car/payment/PaymentCar';
+import PaymentBike from './policy/bike/paymnet/PaymentBike';
+import Advisor from './Advisor/Advisor';
+import Contactlife from './policy/life/Contactlife';
+import Contactadvisor from './ContactAdvisor/Contactadvisor'
 
 
 
@@ -130,6 +153,39 @@ function App() {
         <Route exact path='/Bikecomparelist2' element={<Bikecomparelist2/>}/>
         <Route exact path='/Finalbikecompare' element={<Finalbikecompare/>}/>
         
+   {/* ================================== sorting ==================================== */}
+
+        <Route exact path='/PrimumAcd' element={<PrimumAcd/>}/>
+        <Route exact path='/PrimumDcd' element={<PrimumDcd/>}/>
+        <Route exact path='/CoverAcd' element={<CoverAcd/>}/>
+        <Route exact path='/CoverDcd' element={<CoverDcd/>}/>
+
+        <Route exact path='/BikePrimumAcd' element={<BikePrimumAcd/>}/>
+        <Route exact path='/BikePrimumDcd' element={<BikePrimumDcd/>}/>
+        <Route exact path='/BikeCoverAcd' element={<BikeCoverAcd/>}/>
+        <Route exact path='/BikeCoverDcd' element={<BikeCoverDcd/>}/>
+
+        <Route exact path='/Healthcoveracd' element={<Healthcoveracd/>}/>
+        <Route exact path='/Healthcoverdcd' element={<Healthcoverdcd/>}/>
+        <Route exact path='/Healthprimumacd' element={<Healthprimumacd/>}/>
+        <Route exact path='/Healthprimumdcd' element={<Healthprimumdcd/>}/>
+
+        <Route exact path='/Carcoveracd' element={<Carcoveracd/>}/>
+        <Route exact path='/Carcoverdcd' element={<Carcoverdcd/>}/>
+        <Route exact path='/Carprimumacd' element={<Carprimumacd/>}/>
+        <Route exact path='/Carprimumdcd' element={<Carprimumdcd/>}/>
+
+        <Route exact path='/Paymentlife/:id' element={<Paymentlife/>}/>
+        <Route exact path='/PaymentHealth/:id' element={<PaymentHealth/>}/>
+        <Route exact path='/PaymentCar/:id' element={<PaymentCar/>}/>
+        <Route exact path='/PaymentBike/:id' element={<PaymentBike/>}/>
+
+        <Route exact path='/Advisor' element={<Advisor/>}/>
+
+        <Route exact path='/Contactlife/:id' element={<Contactlife/>}/>
+        
+        
+        <Route exact path='/Contactadvisor' element={<Contactadvisor/>}/>
 
 
 

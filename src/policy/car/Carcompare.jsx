@@ -112,6 +112,9 @@ const Carcompare = () => {
 
         if (resp.status === 200 ) {
           localStorage.setItem("cid",resp.data._id)
+          localStorage.setItem("cover1",resp.data.cover)
+          localStorage.setItem("name1",resp.data.name)
+          localStorage.setItem("idv1",resp.data.idv)
       }
           
       });
@@ -155,11 +158,13 @@ const Carcompare = () => {
                 <td className={classes.td}><h4>{data.cover}</h4></td>
                 {/* <td className={classes.td2}><h4>{data2.cover}</h4></td> */}
               </tr>
+
               <tr className={classes.tr}>
-                <th className={classes.th}><h4>Medical Required</h4></th>
-                <td className={classes.td}><h4>Tele Medical</h4></td>
-                {/* <td className={classes.td2}><h4>Physical Medical</h4></td> */}
+                <th className={classes.th}><h4>Claim Settlement Ratio</h4></th>
+                <td className={classes.td}><h4>{data.idv}</h4></td>
+                {/* <td className={classes.td2}><h4>{data2.cover}</h4></td> */}
               </tr>
+              
               <tr className={classes.tr}>
                 <th className={classes.th}><h4>Free Look Period</h4></th>
                 <td className={classes.td}><h4>30 Days</h4></td>

@@ -235,6 +235,23 @@ const Healthpolicy = () => {
       <div><p className={classes.serchp}>Find Best Policy</p></div>
               <div className={classes.serch}><input type="text" class="form-control search" placeholder="enter policy details" onChange={onChange}/></div>
               <div className={classes.icon}> <i class="fa fa-search fa-2x"></i></div>
+
+              <div class="dropdown">
+                    <div  class="dropbtn">| &#160; Sort By Price<i  class="fa fa-sort-amount-asc "></i></div>
+                    <div class="dropdowncontent">
+                        <a onClick={() => { navigate('/Healthprimumacd')}}><i class="fa fa-arrow-up"></i> Low to High</a>
+                        <a onClick={() => { navigate('/Healthprimumdcd')}}><i class="fa fa-arrow-down"></i> High to Low</a>
+                    </div>
+              </div>
+
+              <div class="dropdown">
+                    <div  class="dropbtn">| &#160; &#160; Sort By Claim Settlement<i  class="fa fa-sort-amount-asc "></i></div>
+                    <div class="dropdowncontent">
+                        <a onClick={() => { navigate('/Healthcoverdcd')}}><i class="fa fa-arrow-down"></i> High to Low</a>
+                        <a onClick={() => { navigate('/Healthcoveracd')}}><i class="fa fa-arrow-up"></i> Low to High</a>
+                    </div>
+              </div>
+
             </div>
             {search.map((item1) => (
             <div className={classes.policy}>
@@ -246,13 +263,13 @@ const Healthpolicy = () => {
                             </div>
                             <div className={classes.element}>
                                 <p>{item1.shortdiscription}</p>
-                                <h4>Claims Settled {item1.cover}</h4>
+                                <h4>Claims Settled {item1.cover} %</h4>
                             </div>
                             <div className={classes.element}>
                                  <h4>For  {item1.timeduration} </h4>
                             </div>
                                 <div className={classes.element}>
-                                <button className={classes.primumamount}>₹{item1.primumamount}</button>
+                                <button onClick={() => { navigate(`/PaymentHealth/${item1._id}`);}} className={classes.primumamount}>₹{item1.primumamount}</button>
                                 <button class="viewdetails"  onClick={() => { navigate(`/Healthview/${item1._id}`);}}>View Details</button>
                             </div>
                       </div>
@@ -274,13 +291,13 @@ const Healthpolicy = () => {
                             </div>
                             <div className={classes.element}>
                                 <p>{item.shortdiscription}</p>
-                                <h4>Claims Settled {item.cover}</h4>
+                                <h4>Claims Settled {item.cover} %</h4>
                             </div>
                             <div className={classes.element}>
                                  <h4>For  {item.timeduration} </h4>
                             </div>
                                 <div className={classes.element}>
-                                <button className={classes.primumamount}>₹{item.primumamount}</button>
+                                <button onClick={() => { navigate(`/PaymentHealth/${item._id}`);}} className={classes.primumamount}>₹{item.primumamount}</button>
                                 <button class="viewdetails"  onClick={() => { navigate(`/Healthview/${item._id}`);}}>View Details</button>
                             </div>
                       </div>

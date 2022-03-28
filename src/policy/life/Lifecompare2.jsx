@@ -112,6 +112,10 @@ const Lifecompare = () => {
 
         if (resp.status === 200 ) {
           localStorage.setItem("cid2",resp.data._id)
+          localStorage.setItem("primumamt2",resp.data.primumamount)
+          localStorage.setItem("cover2",resp.data.cover)
+          localStorage.setItem("name2",resp.data.name)
+
       }
           
       });

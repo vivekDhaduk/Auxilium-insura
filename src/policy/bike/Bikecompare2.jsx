@@ -80,7 +80,7 @@ const Bikecompare2 = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const {id} = useParams();
-  const abc = id;
+  const xyz = id;
 
   // const id1 = localStorage.setItem(abc)
 
@@ -104,7 +104,7 @@ const Bikecompare2 = () => {
   function getList() {
 
     
-    fetch(`${url}/policy/bikecompare3/${abc}`).then((result) => {
+    fetch(`${url}/policy/bikecompare3/${xyz}`).then((result) => {
      
       result.json().then((resp) => {
         console.log(resp)
@@ -112,6 +112,8 @@ const Bikecompare2 = () => {
 
         if (resp.status === 200 ) {
           localStorage.setItem("cid2",resp.data._id)
+          localStorage.setItem("cover2",resp.data.cover)
+          localStorage.setItem("name2",resp.data.name)
       }
           
       });
@@ -134,7 +136,7 @@ const Bikecompare2 = () => {
             </div>
             <div className={classes.companylogo2}>
                 {/* <img className={classes.img} src={data2.logo} alt="" /> */}
-                <button className={classes.backtopolicy2}  onClick={() => { navigate("/Finalcarcompare");}} >Now you can proside</button>
+                <button className={classes.backtopolicy2}  onClick={() => { navigate("/Finalbikecompare");}} >Now you can proside</button>
 
             </div>
         </div>

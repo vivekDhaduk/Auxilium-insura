@@ -6,6 +6,8 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { makeStyles } from '@material-ui/core'
 import { useNavigate } from 'react-router-dom'
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
 // import PolicylifeHeader from './PolicylifeHeader'
 
 
@@ -27,7 +29,7 @@ const useStyles = makeStyles({
   },
   backtopolicy:{
     marginTop:"40px",
-    color:"#00b2ce",
+    color:"##000",
     marginLeft:"200px"
   },
   companylogo:{
@@ -68,6 +70,9 @@ const useStyles = makeStyles({
   th:{
     paddingLeft:"50px",
     width:"200px"
+  },
+  charth3:{
+    marginBottom:"30px"
   }
 
 })
@@ -76,11 +81,35 @@ const Finalcarcompare = () => {
   const navigate = useNavigate();
   const abc = localStorage.getItem("cid")
   const xyz = localStorage.getItem("cid2")
+  const primumamt1 = localStorage.getItem("primumamt1")
+  const primumamt2 = localStorage.getItem("primumamt2")
+  const cover1 = localStorage.getItem("cover1")
+  const cover2 = localStorage.getItem("cover2")
+  const name1 = localStorage.getItem("name1")
+  const name2 = localStorage.getItem("name2")
+  const idv1 = localStorage.getItem("idv1")
+  const idv2 = localStorage.getItem("idv2")
   const home=()=>{
     localStorage.removeItem("cid")
     localStorage.removeItem("cid2")
     navigate("/Carpolicy")
 }
+const chartdata = [
+  
+  {
+    
+    name:name1,
+    primumamount: primumamt1,
+    cover:cover1,
+    idv:idv1
+  },
+  {
+    name: name2,
+    primumamount: primumamt2,
+    cover:cover2,
+    idv:idv2
+  },
+];
 
   const [data, SetData] = useState([]);
   useEffect(() => {
@@ -115,7 +144,7 @@ const Finalcarcompare = () => {
     getheader();
   }, []);
   function getheader() {
-    fetch(`${url}CarIns/user/view`).then((result) => {
+    fetch(`${url}/CarIns/user/view`).then((result) => {
       result.json().then((resp) => {
         console.log("header data",resp.data);
         SetHeader(resp.data);
@@ -140,20 +169,18 @@ const Finalcarcompare = () => {
                   <>
                   <div class="collapse navbar-collapse navbar-main-collapse">
                     <ul class="nav navbar-nav navbar-right">
+                        
                         <li>
-                            <a href="">BASIC DETAILS</a>
+                            <a href="">|&#160;  CarNumber - {val.CarNumber}</a>
                         </li>
                         <li>
-                            <a href="">|&#160;  Name - {val.fullname}</a>
-                        </li>
-                        <li>
-                            <a href="">|&#160;  Age - {val.age}</a>
+                            <a href="">|&#160;  Company - {val.Company}</a>
                         </li>
                         <li >
-                            <a href="">|&#160;  Income - {val.annualincome}</a>
+                            <a href="">|&#160;  Model - {val.Model}</a>
                         </li>
                         <li>
-                            <a href="">|&#160;  City - {val.city}</a>
+                            <a href="">|&#160;  CarRegisterYear - {val.CarRegisterYear}</a>
                         </li>
                     </ul>
                </div>
@@ -189,8 +216,8 @@ const Finalcarcompare = () => {
               </tr>
               <tr className={classes.tr}>
                 <th className={classes.th}><h4>Claim Settlement Ratio</h4></th>
-                <td className={classes.td}><h4>{data.cover}</h4></td>
-                <td className={classes.td2}><h4>{data2.cover}</h4></td>
+                <td className={classes.td}><h4>{data.cover} %</h4></td>
+                <td className={classes.td2}><h4>{data2.cover} %</h4></td>
               </tr>
               <tr className={classes.tr}>
                 <th className={classes.th}><h4>IDV</h4></th>
@@ -213,6 +240,82 @@ const Finalcarcompare = () => {
                 <td className={classes.td2}><h4>Yes</h4></td>
               </tr>
             </table>
+            <div className={classes.charts}>
+                <div>
+                  <h3 className={classes.charth3}>Primumamount</h3>
+                  <ResponsiveContainer width="70%" aspect={3}>
+                  <BarChart
+                    width={20}
+                    height={300}
+                    data={chartdata}
+                    margin={{
+                      top: 5,
+                      right: 430,
+                      // left: 220,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                 
+                  
+                    <Bar dataKey="primumamount" fill="#8884d8" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              <div>
+                  <h3 className={classes.charth3}>Cover</h3>
+                  <ResponsiveContainer width="70%" aspect={3}>
+                  <BarChart
+                    width={20}
+                    height={300}
+                    data={chartdata}
+                    margin={{
+                      top: 5,
+                      right: 430,
+                      // left: 220,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                  
+                    <Bar dataKey="cover" fill="#82ca9d" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              <div>
+                  <h3 className={classes.charth3}>IDV</h3>
+                  <ResponsiveContainer width="70%" aspect={3}>
+                  <BarChart
+                    width={20}
+                    height={300}
+                    data={chartdata}
+                    margin={{
+                      top: 5,
+                      right: 430,
+                      // left: 220,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                 
+                  
+                    <Bar dataKey="idv" fill="#8884d8" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              </div>
           </div>
       </div>
 

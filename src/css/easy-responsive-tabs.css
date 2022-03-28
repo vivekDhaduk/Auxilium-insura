@@ -18,6 +18,23 @@
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
 }
+.resp-tabs-list2 li {
+    cursor: pointer;
+    /* width: 300px; */
+    border-bottom:1px solid #e7edee;
+    line-height:86px;
+    padding-left:30px;
+    font-weight:300;
+    font-size:18px;
+    /* transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease; */
+}
+.resp-tabs-list2 li:hover, .resp-tabs-list2 li.resp-tab-active, h3.resp-accordion:hover {
+    background-color:#e7edee;
+    border-bottom:1px solid #F3F6F8;
+}
 
 .resp-tabs-list li:hover, .resp-tabs-list li.resp-tab-active, h3.resp-accordion:hover {
     background-color:#e7edee;

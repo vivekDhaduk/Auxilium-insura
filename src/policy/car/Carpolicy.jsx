@@ -215,6 +215,23 @@ const Carpolicy = () => {
               <div><p className={classes.serchp}>Find Best Policy</p></div>
               <div className={classes.serch}><input type="text" class="form-control search" placeholder="enter policy details"  onChange={onChange}/></div>
               <div className={classes.icon}> <i class="fa fa-search fa-2x"></i></div>
+
+              <div class="dropdown">
+                    <div  class="dropbtn">| &#160; Sort By Price<i  class="fa fa-sort-amount-asc "></i></div>
+                    <div class="dropdowncontent">
+                        <a onClick={() => { navigate('/Carprimumacd')}}><i class="fa fa-arrow-up"></i> Low to High</a>
+                        <a onClick={() => { navigate('/Carprimumdcd')}}><i class="fa fa-arrow-down"></i> High to Low</a>
+                    </div>
+              </div>
+
+              <div class="dropdown">
+                    <div  class="dropbtn">| &#160; &#160; Sort By Claim Settlement<i  class="fa fa-sort-amount-asc "></i></div>
+                    <div class="dropdowncontent">
+                        <a onClick={() => { navigate('/Carcoverdcd')}}><i class="fa fa-arrow-down"></i> High to Low</a>
+                        <a onClick={() => { navigate('/Carcoveracd')}}><i class="fa fa-arrow-up"></i> Low to High</a>
+                    </div>
+              </div>
+
             </div>
             {search.map((search) => (
           <div className={classes.policy}>
@@ -226,13 +243,13 @@ const Carpolicy = () => {
                             </div>
                           <div className={classes.element}>
                               <p>{search.shortdiscription}</p>
-                              <h4>Claims Settled {search.cover}</h4>
+                              <h4>Claims Settled {search.cover} %</h4>
                           </div>
                           <div className={classes.element}>
                                <h4>For  {search.timeduration} </h4>
                           </div>
                               <div className={classes.element}>
-                              <button className={classes.primumamount}>₹{search.primumamount}</button>
+                              <button onClick={() => { navigate(`/PaymentCar/${search._id}`);}} className={classes.primumamount}>₹{search.primumamount}</button>
                               {/* <button class="viewdetails"  onClick={() => { navigate(`/Lifeview/${search._id}`);}}>View Details</button> */}
                           </div>
                     </div>
@@ -253,14 +270,14 @@ const Carpolicy = () => {
                             </div>
                             <div className={classes.element}>
                                 <p>{item.shortdiscription}</p>
-                                <h4>Claims Settled {item.cover}</h4>
+                                <h4>Claims Settled {item.cover} %</h4>
                             </div>
                             <div className={classes.element}>
                                  <h4>For  {item.timeduration}</h4>
                                  <h4>IDV ₹  {item.idv}</h4>
                             </div>
                                 <div className={classes.element}>
-                                <button className={classes.primumamount}>₹{item.primumamount}</button>
+                                <button onClick={() => { navigate(`/PaymentCar/${item._id}`);}} className={classes.primumamount}>₹{item.primumamount}</button>
                                 {/* <button class="viewdetails">View Details</button> */}
                             </div>
                       </div>

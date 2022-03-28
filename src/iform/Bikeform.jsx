@@ -271,7 +271,8 @@ const Bikeform = () => {
                         </button>
                       </div>
                   <div className={classes.btl}>
-                    <p
+                    <a
+                      href="#bikepolicy"
                       type="submit"
                       className={classes.apply}
                       onClick={() => {
@@ -279,7 +280,7 @@ const Bikeform = () => {
                       }}
                     >
                       Find Your Best Insurance
-                    </p>
+                    </a>
                   </div>
                 </div>
               </div>

@@ -109,7 +109,7 @@ logos:{
     textDecoration:"none",
     fontSize:"20px",
     marginTop:"-4px",
-    color:"blue",
+    color:"black",
     marginLeft:"10px"
   }
   

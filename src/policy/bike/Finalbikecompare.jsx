@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { makeStyles } from '@material-ui/core'
 import { useNavigate } from 'react-router-dom'
 // import PolicylifeHeader from './PolicylifeHeader'
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
 const useStyles = makeStyles({
@@ -27,7 +28,7 @@ const useStyles = makeStyles({
   },
   backtopolicy:{
     marginTop:"40px",
-    color:"#00b2ce",
+    color:"#000",
     marginLeft:"200px"
   },
   companylogo:{
@@ -68,6 +69,9 @@ const useStyles = makeStyles({
   th:{
     paddingLeft:"50px",
     width:"200px"
+  },
+  charth3:{
+    marginBottom:"30px"
   }
 
 })
@@ -76,11 +80,32 @@ const Finalbikecompare = () => {
   const navigate = useNavigate();
   const abc = localStorage.getItem("cid")
   const xyz = localStorage.getItem("cid2")
+  const primumamt1 = localStorage.getItem("primumamt1")
+  const primumamt2 = localStorage.getItem("primumamt2")
+  const cover1 = localStorage.getItem("cover1")
+  const cover2 = localStorage.getItem("cover2")
+  const name1 = localStorage.getItem("name1")
+  const name2 = localStorage.getItem("name2")
   const home=()=>{
     localStorage.removeItem("cid")
     localStorage.removeItem("cid2")
     navigate("/Bikepolicy")
 }
+const chartdata = [
+  
+  {
+    
+    name:name1,
+    primumamount: primumamt1,
+    cover:cover1,
+  },
+  {
+    name: name2,
+    primumamount: primumamt2,
+    cover:cover2,
+   
+  },
+];
 
   const [data, SetData] = useState([]);
   useEffect(() => {
@@ -93,7 +118,7 @@ const Finalbikecompare = () => {
      
       result.json().then((resp) => {
         console.log(resp)
-        // SetData(resp.data);    
+        SetData(resp.data);    
       });
     });
   }
@@ -108,26 +133,27 @@ const Finalbikecompare = () => {
     fetch(`${url}/policy/bikecompare3/${xyz}`).then((result) => {
       result.json().then((resp) => {
         console.log(resp)
-        // SetData2(resp.data);    
+        SetData2(resp.data);    
       });
     });
   }
   // ======================= basic policy detail start ==========================
-//   const [header, SetHeader] = useState([]);
-//   useEffect(() => {
-//     getheader();
-//   }, []);
-//   function getheader() {
-//     fetch(`${url}BikeIns/user/view`).then((result) => {
-//       result.json().then((resp) => {
-//         console.log("header data",resp.data);
-//         SetHeader(resp.data);
-//       });
-//     });
-//   }
+  const [header, SetHeader] = useState([]);
+  useEffect(() => {
+    getheader();
+  }, []);
+  function getheader() {
+    fetch(`${url}/BikeIns/user/view`).then((result) => {
+      result.json().then((resp) => {
+        console.log("header data",resp.data);
+        SetHeader(resp.data);
+      });
+    });
+  }
   return (
     <>
-    {/* <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    {/* <h1>hello</h1> */}
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -143,20 +169,18 @@ const Finalbikecompare = () => {
                   <>
                   <div class="collapse navbar-collapse navbar-main-collapse">
                     <ul class="nav navbar-nav navbar-right">
+                        
                         <li>
-                            <a href="">BASIC DETAILS</a>
+                            <a href="">|&#160;  Company - {val.Company}</a>
                         </li>
                         <li>
-                            <a href="">|&#160;  Name - {val.fullname}</a>
+                            <a href="">|&#160;  Number - {val.BikeNumber}</a>
                         </li>
                         <li>
-                            <a href="">|&#160;  Age - {val.age}</a>
+                            <a href="">|&#160;  Model - {val.Model}</a>
                         </li>
                         <li >
-                            <a href="">|&#160;  Income - {val.annualincome}</a>
-                        </li>
-                        <li>
-                            <a href="">|&#160;  City - {val.city}</a>
+                            <a href="">|&#160;  Year - {val.RegistrationYear}</a>
                         </li>
                     </ul>
                </div>
@@ -192,8 +216,8 @@ const Finalbikecompare = () => {
               </tr>
               <tr className={classes.tr}>
                 <th className={classes.th}><h4>Claim Settlement Ratio</h4></th>
-                <td className={classes.td}><h4>{data.cover}</h4></td>
-                <td className={classes.td2}><h4>{data2.cover}</h4></td>
+                <td className={classes.td}><h4>{data.cover} %</h4></td>
+                <td className={classes.td2}><h4>{data2.cover} %</h4></td>
               </tr>
               <tr className={classes.tr}>
                 <th className={classes.th}><h4>IDV</h4></th>
@@ -216,8 +240,58 @@ const Finalbikecompare = () => {
                 <td className={classes.td2}><h4>Yes</h4></td>
               </tr>
             </table>
+            <div className={classes.charts}>
+                <div>
+                  <h3 className={classes.charth3}>Primumamount</h3>
+                  <ResponsiveContainer width="70%" aspect={3}>
+                  <BarChart
+                    width={20}
+                    height={300}
+                    data={chartdata}
+                    margin={{
+                      top: 5,
+                      right: 430,
+                      // left: 220,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                  
+                    <Bar dataKey="primumamount" fill="#8884d8" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              <div>
+                  <h3 className={classes.charth3}>Cover</h3>
+                  <ResponsiveContainer width="70%" aspect={3}>
+                  <BarChart
+                    width={20}
+                    height={300}
+                    data={chartdata}
+                    margin={{
+                      top: 5,
+                      right: 430,
+                      // left: 220,
+                      bottom: 5,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                  
+                    <Bar dataKey="cover" fill="#82ca9d" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              </div>
           </div>
-      </div> */}
+      </div>
 
     </>
   )

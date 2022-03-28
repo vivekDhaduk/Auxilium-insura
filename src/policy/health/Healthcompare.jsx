@@ -112,6 +112,8 @@ const Healthcompare = () => {
 
         if (resp.status === 200 ) {
           localStorage.setItem("cid",resp.data._id)
+          localStorage.setItem("cover1",resp.data.cover)
+          localStorage.setItem("name1",resp.data.name)
       }
           
       });

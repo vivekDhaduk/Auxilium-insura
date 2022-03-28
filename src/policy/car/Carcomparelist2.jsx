@@ -110,7 +110,7 @@ logos:{
     textDecoration:"none",
     fontSize:"20px",
     marginTop:"-4px",
-    color:"blue",
+    color:"black",
     marginLeft:"10px"
   }
   
@@ -184,6 +184,10 @@ const Carcomaparelist = () => {
                               <p>{item.shortdiscription}</p>
                               <h4>Claims Settled {item.cover}</h4>
                           </div>
+                          <div className={classes.element}>
+                                 <h4>For  {item.timeduration}</h4>
+                                 <h4>IDV ₹  {item.idv}</h4>
+                            </div>
                           <div className={classes.element}>
                                <h4>For  {item.timeduration} </h4>
                           </div>

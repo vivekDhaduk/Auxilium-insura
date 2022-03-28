@@ -313,7 +313,7 @@ const Register = () => {
                         <label htmlFor="Password">Password</label>
                         <input
                           className={classes.input}
-                          type="password"
+                          type="text"
                           name="password"
                           value={data.password}
                           onChange={OnInput}
