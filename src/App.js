@@ -72,6 +72,9 @@ import PaymentBike from './policy/bike/paymnet/PaymentBike';
 import Advisor from './Advisor/Advisor';
 import Contactlife from './policy/life/Contactlife';
 import Contactadvisor from './ContactAdvisor/Contactadvisor'
+import Contacthealth from './policy/health/Contacthealth';
+import Contactbike from './policy/bike/Contactbike';
+import Contactcar from './policy/car/Contactcar';
 
 
 
@@ -183,7 +186,9 @@ function App() {
         <Route exact path='/Advisor' element={<Advisor/>}/>
 
         <Route exact path='/Contactlife/:id' element={<Contactlife/>}/>
-        
+        <Route exact path='/Contacthealth/:id' element={<Contacthealth/>}/>
+        <Route exact path='/Contactbike/:id' element={<Contactbike/>}/>
+        <Route exact path='/Contactcar/:id' element={<Contactcar/>}/>
         
         <Route exact path='/Contactadvisor' element={<Contactadvisor/>}/>
 

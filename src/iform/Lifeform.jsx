@@ -178,6 +178,7 @@ const Lifeform = () => {
               annualincome:"",
               nominee:""
             });
+            navigate('/Lifepolicy')
           })
           .catch((err) => {
             console.log(err);
@@ -187,6 +188,7 @@ const Lifeform = () => {
       const OnSingup = (e) => {
         e.preventDefault();
         Submite();
+        
       };
   return (
     <>
@@ -297,11 +299,11 @@ const Lifeform = () => {
               </div>
                   <div className={classes.btl}>
                         {/* <input className={classes.Register} type="submit" value="register"/> */}
-                        <button type="submit" className={classes.btn}>
+                        <button type="submit" className={classes.btn} >
                           Submite
                         </button>
                       </div>
-                  <div className={classes.btl}>
+                  {/* <div className={classes.btl}>
                     <p
                       type="submit"
                       className={classes.apply}
@@ -311,7 +313,7 @@ const Lifeform = () => {
                     >
                       Find Your Best Insurance
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </form>

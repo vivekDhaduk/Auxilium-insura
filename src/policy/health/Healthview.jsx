@@ -198,6 +198,8 @@ console.log("setdata",data)
                     </div>
                     <div >
                         <a href='https://wa.me/9510542252'><label className={classes.whatsapp}><img className={classes.wp} src='../images/whatsapp.png'/><p className={classes.wptext}>Share</p></label></a>
+                    <button  onClick={() => { navigate(`/Contacthealth/${data._id}`);}}>Need help ?</button>
+
                     </div>
                 </div>
             </ResponsiveContainer>

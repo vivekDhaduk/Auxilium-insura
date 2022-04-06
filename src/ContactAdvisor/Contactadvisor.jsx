@@ -29,14 +29,14 @@ function Contactadvisor() {
           <h3>Join A Chat</h3>
           <input
             type="text"
-            placeholder="please enter youe name"
+            placeholder="please enter your name"
             onChange={(event) => {
               setUsername(event.target.value);
             }}
           />
           <input
             type="text"
-            placeholder="Room ID..."
+            placeholder="please enter Advisor name"
             onChange={(event) => {
               setRoom(event.target.value);
             }}

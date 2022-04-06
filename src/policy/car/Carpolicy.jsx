@@ -278,7 +278,7 @@ const Carpolicy = () => {
                             </div>
                                 <div className={classes.element}>
                                 <button onClick={() => { navigate(`/PaymentCar/${item._id}`);}} className={classes.primumamount}>₹{item.primumamount}</button>
-                                {/* <button class="viewdetails">View Details</button> */}
+                                <button class="viewdetails"  onClick={() => { navigate(`/Contactcar/${item._id}`);}}>Need Help ?</button>
                             </div>
                       </div>
                       <div class="dropdown3">

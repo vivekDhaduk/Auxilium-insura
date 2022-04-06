@@ -50,7 +50,7 @@ const Advisor = () => {
                             <img src="../images/team-image-1-646x680.jpg" alt=""/>
                         </div>
                         <div class="down-content">
-                            <span>CEO</span>
+                            <span>Life insurance advisor</span>
                             <h4>John Doe</h4>
                             <p>Vestibulum id est eu felis vulputate hendrerit. Suspendisse dapibus turpis in dui pulvinar imperdiet. Nunc consectetur.</p>
                             <ul class="social-icons">
@@ -68,7 +68,7 @@ const Advisor = () => {
                             <img src="../images/team-image-2-646x680.jpg" alt=""/>
                         </div>
                         <div class="down-content">
-                            <span>Customer Support</span>
+                            <span>Health insurence advisor</span>
                             <h4>Jane Smith</h4>
                             <p>Vestibulum id est eu felis vulputate hendrerit. Suspendisse dapibus turpis in dui pulvinar imperdiet. Nunc consectetur.</p>
                             <ul class="social-icons">
@@ -86,7 +86,7 @@ const Advisor = () => {
                             <img src="../images/team-image-3-646x680.jpg" alt=""/>
                         </div>
                         <div class="down-content">
-                            <span>Customer Support</span>
+                            <span>Bike insurence advisor</span>
                             <h4>Kate Johnson</h4>
                             <p>Vestibulum id est eu felis vulputate hendrerit. Suspendisse dapibus turpis in dui pulvinar imperdiet. Nunc consectetur.</p>
                             <ul class="social-icons">
@@ -97,7 +97,7 @@ const Advisor = () => {
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div>  
                 {/* <h1>hello</h1> */}
                 <div class="col-md-3 col-sm-6">
                     <div class="trainer-item">
@@ -105,7 +105,7 @@ const Advisor = () => {
                             <img src="../images/team-image-4-646x680.jpg" alt=""/>
                         </div>
                         <div class="down-content">
-                            <span>Customer Support</span>
+                            <span>Car insurence advisor</span>
                             <h4>Mark Green</h4>
                             <p>Vestibulum id est eu felis vulputate hendrerit. Suspendisse dapibus turpis in dui pulvinar imperdiet. Nunc consectetur.</p>
                             <ul class="social-icons">

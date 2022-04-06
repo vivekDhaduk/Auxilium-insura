@@ -85,11 +85,11 @@ const Welcome = () => {
                             </div>
                             <div>
                                 <input type="text" value={data.email}
-                          onChange={OnInput}name="email" placeholder="Email" />
+                          onChange={OnInput} name="email" placeholder="Email" />
                             </div>
                             <div>
                                 <input type="text" value={data.phoneno}
-                          onChange={OnInput} name="ph-no" placeholder="Phone no" />
+                          onChange={OnInput} name="phoneno" placeholder="Phone no" />
                             </div>
                             <div class="form-select">
                                 <span></span>

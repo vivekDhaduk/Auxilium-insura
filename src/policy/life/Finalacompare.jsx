@@ -171,7 +171,7 @@ const chartdata = [
                   <div class="collapse navbar-collapse navbar-main-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="">BASIC DETAILS</a>
+                            <a href=""></a>
                         </li>
                         <li>
                             <a href="">|	&#160;  Name - {val.fullname}</a>

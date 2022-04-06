@@ -168,6 +168,7 @@ const Carform = () => {
                 FuelType: "",
                 CarRegisterYear:"",
             });
+            navigate("/Carpolicy")
           })
           .catch((err) => {
             console.log(err);
@@ -311,7 +312,7 @@ const Carform = () => {
                           Submite
                         </button>
                       </div>
-                  <div className={classes.btl}>
+                  {/* <div className={classes.btl}>
                     <p
                       type="submit"
                       className={classes.apply}
@@ -321,7 +322,7 @@ const Carform = () => {
                     >
                       Find Your Best Insurance
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </form>
