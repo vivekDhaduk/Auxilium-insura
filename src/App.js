@@ -75,6 +75,7 @@ import Contactadvisor from './ContactAdvisor/Contactadvisor'
 import Contacthealth from './policy/health/Contacthealth';
 import Contactbike from './policy/bike/Contactbike';
 import Contactcar from './policy/car/Contactcar';
+import Advisorlist from './Advisor/Advisorlist';
 
 
 
@@ -192,6 +193,8 @@ function App() {
         
         <Route exact path='/Contactadvisor' element={<Contactadvisor/>}/>
 
+
+        <Route exact path='/Advisorlist' element={<Advisorlist/>}/>
 
 
           

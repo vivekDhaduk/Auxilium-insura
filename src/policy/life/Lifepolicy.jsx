@@ -158,19 +158,7 @@ const Lifepolicy = () => {
     fetch(`${url}/policy/viewlife`).then((result) => {
       result.json().then((resp) => {
         console.log(resp.data);
-
         SetData(resp.data);
-
-        SetLogo(resp.data[0].logo);
-        SetPrimumamount(resp.data[0].primumamount);
-        SetTimeduration(resp.data[0].timeduration);
-        SetDiscription(resp.data[0].shortdiscription);
-
-        SetCover(resp.data[0].cover);
-        // SetAnnualincome(resp.data[0].annualincome);
-
-
-        
       });
     }); 
   }

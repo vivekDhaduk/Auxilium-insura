@@ -248,7 +248,7 @@ const Carcoveracd = () => {
                                <h4>For  {search.timeduration} </h4>
                           </div>
                               <div className={classes.element}>
-                              <button className={classes.primumamount}>₹{search.primumamount}</button>
+                              <button onClick={() => { navigate(`/PaymentCar/${search._id}`);}}className={classes.primumamount}>₹{search.primumamount}</button>
                               {/* <button class="viewdetails"  onClick={() => { navigate(`/Lifeview/${search._id}`);}}>View Details</button> */}
                           </div>
                     </div>
@@ -276,7 +276,7 @@ const Carcoveracd = () => {
                                  <h4>IDV ₹  {item.idv}</h4>
                             </div>
                                 <div className={classes.element}>
-                                <button className={classes.primumamount}>₹{item.primumamount}</button>
+                                <button onClick={() => { navigate(`/PaymentCar/${item._id}`);}} className={classes.primumamount}>₹{item.primumamount}</button>
                                 {/* <button class="viewdetails">View Details</button> */}
                             </div>
                       </div>

@@ -12,6 +12,7 @@ import { makeStyles } from '@material-ui/styles'
 import { url } from '../api'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const useStyles = makeStyles({
     background:{
@@ -20,9 +21,11 @@ const useStyles = makeStyles({
 
 })
 
-const Advisor = () => {
+const Advisorlist = () => {
     const classes = useStyles();
   const [data, SetData] = useState([]);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     getList();
@@ -63,11 +66,12 @@ const Advisor = () => {
             <br/>
             <br/>
             <div class="row">
-    {data.map((item) => (
-
+    {data.map((item) => (<>
+                
                 <div class="col-md-3 col-sm-6">
                     <div class="trainer-item">
                         <div class="image-thumb">
+                    <input type="checkbox"  onClick={()=>{navigate(`/Contactlife/${item._id}`)}}/><p>select your advisor</p>
                             <img src={item.image} alt=""/>
                         </div>
                         <div class="down-content">
@@ -84,6 +88,7 @@ const Advisor = () => {
                         </div>
                     </div>
                 </div>
+                </>
         ))}      
 
                 {/* <div class="col-md-3 col-sm-6">
@@ -152,4 +157,4 @@ const Advisor = () => {
   )
 }
 
-export default Advisor
+export default Advisorlist

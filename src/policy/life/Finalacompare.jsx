@@ -219,8 +219,8 @@ const chartdata = [
               </tr>
               <tr className={classes.tr}>
                 <th className={classes.th}><h4>Claim Settlement Ratio</h4></th>
-                <td className={classes.td}><h4>{data.cover}</h4></td>
-                <td className={classes.td2}><h4>{data2.cover}</h4></td>
+                <td className={classes.td}><h4>{data.cover}%</h4></td>
+                <td className={classes.td2}><h4>{data2.cover}%</h4></td>
               </tr>
               <tr className={classes.tr}>
                 <th className={classes.th}><h4>Medical Required</h4></th>

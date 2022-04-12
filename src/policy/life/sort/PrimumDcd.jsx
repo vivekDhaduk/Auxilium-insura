@@ -244,7 +244,7 @@ const onChange=(e)=>{
                                <h4>For  {search.timeduration} </h4>
                           </div>
                               <div className={classes.element}>
-                              <button onClick={() => { navigate('/Paymentlife')}} className={classes.primumamount}>₹{search.primumamount}</button>
+                              <button onClick={() => { navigate(`/Paymentlife/${search._id}`);}} className={classes.primumamount}>₹{search.primumamount}</button>
                               <button class="viewdetails"  onClick={() => { navigate(`/Lifeview/${search._id}`);}}>View Details</button>
                           </div>
                     </div>
@@ -271,7 +271,7 @@ const onChange=(e)=>{
                                <h4>For  {item.timeduration} </h4>
                           </div>
                               <div className={classes.element}>
-                              <button onClick={() => { navigate('/Paymentlife')}} className={classes.primumamount}>₹{item.primumamount}</button>
+                              <button onClick={() => { navigate(`/Paymentlife/${item._id}`);}} className={classes.primumamount}>₹{item.primumamount}</button>
                               <button class="viewdetails"  onClick={() => { navigate(`/Lifeview/${item._id}`);}}>View Details</button>
                           </div>
                     </div>

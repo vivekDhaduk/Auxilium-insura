@@ -79,6 +79,7 @@ const Contacthealth = () => {
     const abc = id;
 
     const [data, SetData] = useState([]);
+    const [data2, SetData2] = useState([]);
 
 useEffect(() => {
   getList();
@@ -91,7 +92,7 @@ function getList() {
   fetch(`${url}/policy/healthcompare1/${abc}`).then((result) => {
    
     result.json().then((resp) => {
-      console.log(resp.data)
+    //   console.log(resp.data)
       SetData(resp.data);
       // SetLogo(resp.data.logo);
       // SetPrimumamount(resp.data.primumamount);
@@ -101,6 +102,29 @@ function getList() {
     });
   });
 }
+
+useEffect(() => {
+    getList2();
+  }, []);
+  
+  
+  function getList2() {
+  
+    
+    fetch(`${url}/advisor/viewhelthadvisor`).then((result) => {
+     
+      result.json().then((resp) => {
+        // console.log(resp)
+        SetData2(resp.data);
+        // SetLogo(resp.data.logo);
+        // SetPrimumamount(resp.data.primumamount);
+        // SetTimeduration(resp.data.timeduration);
+        // SetDiscription(resp.data.shortdiscription);
+        // SetCover(resp.data.cover);   
+      });
+    });
+  }
+  
 
   return (
     <>
@@ -150,12 +174,13 @@ function getList() {
             <div class="col-md-3 col-sm-6">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="../images/team-image-3-646x680.jpg" alt=""/>
+                            <img src={data2.image} alt=""/>
                         </div>
                         <div class="down-content">
-                            <span>Health Insurence advisor</span>
-                            <h4>Kate Johnson</h4>
-                            <p>Vestibulum id est eu felis vulputate hendrerit. Suspendisse dapibus turpis in dui pulvinar imperdiet. Nunc consectetur.</p>
+                            <span>{data2.category} Insurence advisor</span>
+                            <h4>{data2.name}</h4>
+                            <h6>{data2.number}</h6>
+                            <p>{data2.discription}</p>
                             <ul class="social-icons">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>

@@ -288,7 +288,7 @@ const Healthform = () => {
                           Submite
                         </button>
                       </div>
-                  {/* <div className={classes.btl}>
+                  <div className={classes.btl}>
                     <p
                       type="submit"
                       className={classes.apply}
@@ -298,7 +298,7 @@ const Healthform = () => {
                     >
                       Find Your Best Insurance
                     </p>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </form>
