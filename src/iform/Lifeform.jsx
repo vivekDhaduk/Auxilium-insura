@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../header/Header";
 import { url } from "../api";
-import Lifechart from "./Lifechart";
+// import Lifechart from "./Lifechart";
 
 
 const useStyles = makeStyles({
@@ -88,7 +88,7 @@ const useStyles = makeStyles({
       formdetail: {
         background: "#fff",
         marginLeft:'80px',
-        marginTop:"30px"
+        marginTop:"70px"
       },
       main: {
         display: "flex",
@@ -148,7 +148,6 @@ const Lifeform = () => {
         
       gender: "",
       fullname: "",
-
       age: "",
       dateofbirth: "",
       city:"",
@@ -171,7 +170,6 @@ const Lifeform = () => {
             setData({
               gender: "",
               fullname: "",
-        
               age: "",
               dateofbirth: "",
               city:"",
@@ -245,18 +243,7 @@ const Lifeform = () => {
                     
                   />
                 </div>
-                <div className={classes.formgroup}>
-                        <label htmlFor="dateofbirth">Date of Birth</label>
-                        <input
-                          className={classes.input}
-                          type="text"
-                          name="dateofbirth"
-                          value={data.dateofbirth}
-                          onChange={OnInput}
-                          placeholder=""
-                          required="true"
-                        />
-                </div>
+
                 <div className={classes.formgroup}>
                         <label htmlFor="city">city</label>
                         <input
@@ -277,7 +264,6 @@ const Lifeform = () => {
                     name="annualincome"
                     value={data.annualincome}
                     onChange={OnInput}
-                  //   placeholder="@gmail.com"
                     required="true"
                     
                   />
@@ -289,7 +275,6 @@ const Lifeform = () => {
                     name="nominee"
                     value={data.nominee}
                     onChange={OnInput}
-                  //   placeholder="@gmail.com"
                     required="true"
                     
                   />
@@ -298,7 +283,6 @@ const Lifeform = () => {
               </div>
               </div>
                   <div className={classes.btl}>
-                        {/* <input className={classes.Register} type="submit" value="register"/> */}
                         <button type="submit" className={classes.btn} >
                           Submite
                         </button>
@@ -320,10 +304,7 @@ const Lifeform = () => {
           </div>
         </div>
       </div>
-      {/* <div className={classes.chart}>
-        <h1 className={classes.apply2}>Help you to find Top Policy</h1>
-      <Lifechart/>
-      </div> */}
+     
     </>
   )
 }

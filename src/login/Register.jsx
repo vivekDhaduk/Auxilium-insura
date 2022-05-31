@@ -188,6 +188,8 @@ const Register = () => {
           age: "",
           password: "",
         });
+        navigate('/login')
+
       })
       .catch((err) => {
         // console.log(err);

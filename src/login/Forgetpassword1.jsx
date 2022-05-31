@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import './login.css'
-import Header from '../header/Header';
+import "./login.css";
+import Header from "../header/Header";
 import { url } from "../api";
-
 
 function Forgetpassword1() {
   const navigate = useNavigate();
@@ -33,7 +32,7 @@ function Forgetpassword1() {
       })
       .catch((err) => {
         // console.log("err", err);
-        alert("Email Not Register")
+        alert("Email Not Register");
       });
   };
   const loginUser = async (e) => {
@@ -42,67 +41,68 @@ function Forgetpassword1() {
   };
 
   return (
-    <>    <Header/>
-    <div className="basecont">
-      <form className="full" onSubmit={loginUser}>
-        {/* <img className="img1" src='./image/bg2.jpg' alt="" /> */}
+    <>
+      {" "}
+      <Header />
+      <div className="basecont">
+        <form className="full" onSubmit={loginUser}>
+          {/* <img className="img1" src='./image/bg2.jpg' alt="" /> */}
 
-        <div className="main1">
-          <div className="gif">
-            <img src="../images/fpass.gif" alt="" class="animatimg" />
-          </div>
-
-          <div className="main">
-            <div className="imgcontainer1">
-              <img src="../images/pfpass.gif" alt="Avatar" class="avatar" />
+          <div className="main1">
+            <div className="gif">
+              <img src="../images/fpass.gif" alt="" class="animatimg" />
             </div>
 
-            <div className="container1">
-              <label for="uname">
-                <b>Email</b>
-              </label>
-              <input
-                className="text"
-                type="text"
-                placeholder="Enter Email"
-                name="email"
-                value={email.email}
-                onChange={OnInput}
-              />
-              {/*     
+            <div className="main">
+              <div className="imgcontainer1">
+                <img src="../images/pfpass.gif" alt="Avatar" class="avatar" />
+              </div>
+
+              <div className="container1">
+                <label for="uname">
+                  <b>Email</b>
+                </label>
+                <input
+                  className="text"
+                  type="text"
+                  placeholder="Enter Email"
+                  name="email"
+                  value={email.email}
+                  onChange={OnInput}
+                />
+                {/*     
         <label  for="psw"><b>OTP</b></label>
         <div className='otp'>
         <button className='text2' > Send Otp</button>
         <input className="text1" type="text" placeholder="Enter OTP" name="otp" value={email.otp} onChange={OnInput} />
         </div>
         <br/> */}
-              <button className="text" type="submit">
-                Send Otp
-              </button>
-              {/* <label>
+                <button className="text" type="submit">
+                  Send Otp
+                </button>
+                {/* <label>
           <input type="checkbox" checked="checked" name="remember"/> Remember me
         </label> */}
-            </div>
-            <div className="container1">
-              <button
-                type="button"
-                class="cancelbtn"
-                onClick={() => {
-                  navigate("/login");
-                }}
-              >
-                Cancel
-              </button>
+              </div>
+              <div className="container1">
+                <button
+                  type="button"
+                  class="cancelbtn"
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                >
+                  Cancel
+                </button>
 
-              {/* <span className="psw" onClick={()=>{
+                {/* <span className="psw" onClick={()=>{
                        navigate('/change')}} >Change <a className="password" href="#">password?</a></span> */}
+              </div>
             </div>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
     </>
-
   );
 }
 
