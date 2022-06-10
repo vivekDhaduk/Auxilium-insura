@@ -323,22 +323,7 @@ const Register = () => {
                           required="true"
                         />
                       </div>
-                      
-                      {/* <div className={classes.formgroup}>
-                        <label htmlFor="Password">Password</label>
-                        <input
-                          className={classes.input}
-                          type="password"
-                          name="password"
-                          value={data.password}
-                          onChange={OnInput}
-                          placeholder=""
-                          required="true"
-                        />
-                      </div> */}
-                      
-
-                      
+                  
                     </div>
                  
                   </div>

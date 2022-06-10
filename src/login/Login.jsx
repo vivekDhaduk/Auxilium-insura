@@ -2,7 +2,7 @@ import React from "react";
 
 import { makeStyles } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
-import Header from '../header/Header';
+import Header from "../header/Header";
 import { useState } from "react";
 import axios from "axios";
 import { url } from "../api";
@@ -54,10 +54,9 @@ const useStyles = makeStyles({
   label: {
     fontSize: "20px",
   },
-  
+
   footer: {
     marginTop: "2em",
-    
   },
   btn: {
     fontSize: "21px",
@@ -84,12 +83,12 @@ const useStyles = makeStyles({
     color: "#3498bd",
     paddingBottom: "5px",
     cursor: "pointer",
-    marginTop:"10px"
+    marginTop: "10px",
   },
   register: {
     textDecoration: "underline",
     // borderBottom:"solid 1px black",
-    display:"flex"
+    display: "flex",
   },
   main: {
     // width:'100%',
@@ -104,7 +103,7 @@ const useStyles = makeStyles({
     paddingtop: "10px",
     paddingLeft: "10px",
     paddingRight: "50px",
-    marginLeft:"100px"
+    marginLeft: "100px",
   },
   img: {
     height: "450px",
@@ -147,68 +146,53 @@ const Login = () => {
   const classes = useStyles();
   const navigate = useNavigate();
 
-  const[email, setEmail] = useState({
-    email:"",
-    password:""
+  const [email, setEmail] = useState({
+    email: "",
+    password: "",
   });
 
   const OnInput = (e) => {
-    const {name,value}=e.target;
-    setEmail({...email, [name]:value})
-  }
+    const { name, value } = e.target;
+    setEmail({ ...email, [name]: value });
+  };
   // const[password, setPassword] = useState("");
 
   const sub = async (e) => {
     // e.preventDefault();
-    const data = await axios.post(`${url}/userIns/login`, email).then(
-      (res)=>{
-        console.log(res.data)
-        if (res.data.status === 200 ) {
-            localStorage.setItem("jwt",res.data.token);
-            localStorage.setItem("id",res.data._id)
-            navigate("/")
+    const data = await axios
+      .post(`${url}/userIns/login`, email)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.status === 200) {
+          localStorage.setItem("jwt", res.data.token);
+          localStorage.setItem("id", res.data._id);
+          navigate("/");
         }
-      }
-    ).catch((err)=>{
-      alert("invalid username or password")
-    })
-      //  method:"POST",
-      //  headers:{
-      //   "Content-Type" : "application/json"
-      //  }, 
-      //  body:JSON.stringify({
-      //     email,
-      //     password
-      //  })
-    };
+      })
+      .catch((err) => {
+        alert("invalid username or password");
+      });
+  };
 
-    const loginUser = async (e) =>{
-      e.preventDefault();
-      sub();
-    }
-
-    // const data = res.json();
-
-    // if(res.status === 400 || !data) {
-    //   window.alert("Invalid Email or password");
-
-    // }else{
-    //   window.alert("Login successfull");
-    //   navigate("/")
-    // }
-
-  // }
+  const loginUser = async (e) => {
+    e.preventDefault();
+    sub();
+  };
 
   return (
     <>
-       <Header /> 
-       <br/>
-       
+      <Header />
+      <br />
+
       <div className={classes.base}>
         <div className={classes.basecontainer}>
           <div className={classes.border}>
             <div className={classes.leftimg}>
-              <img className={classes.img} src="../images/undraw_Access_account_re_8spm.png" alt="" />
+              <img
+                className={classes.img}
+                src="../images/undraw_Access_account_re_8spm.png"
+                alt=""
+              />
             </div>
             <div className={classes.main}>
               <div className={classes.header}>Log in</div>
@@ -226,13 +210,13 @@ const Login = () => {
                       value={email.email}
                       onChange={OnInput}
                       required="true"
-                        //   minLength={10}
-                        //   maxLength={10}
+                      //   minLength={10}
+                      //   maxLength={10}
                     />
                   </div>
                   <div className={classes.formgroup}>
                     <label label htmlFor="Password" className={classes.text}>
-                    password
+                      password
                     </label>
                     <input
                       className={classes.input2}
@@ -248,13 +232,15 @@ const Login = () => {
               </div>
 
               <div className={classes.footer}>
-
-                <button onClick={loginUser} type="submit" className={classes.btn}>
+                <button
+                  onClick={loginUser}
+                  type="submit"
+                  className={classes.btn}
+                >
                   Log in
                 </button>
               </div>
 
-              
               <div className={classes.register}>
                 <p
                   type="submit"
@@ -265,232 +251,22 @@ const Login = () => {
                 >
                   Register
                 </p>
-               
               </div>
               <div className={classes.register}>
-              <p className={classes.apply}  onClick={() => {
+                <p
+                  className={classes.apply}
+                  onClick={() => {
                     navigate("/Forgetpassword1");
-                  }}>forgot password ?</p>
-               
+                  }}
+                >
+                  forgot password ?
+                </p>
               </div>
-              
             </div>
           </div>
         </div>
       </div>
-  </>
+    </>
   );
 };
 export default Login;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-
-// import { makeStyles } from "@material-ui/core";
-// import { useNavigate } from "react-router-dom";
-// import Header from "./Header";
-
-// const useStyles = makeStyles({
-//   base: {
-//     // background:'#e6f2ff',
-//     height: "605px",
-//     width: "100%",
-//     boxShadow: "8px 8px 15px gray",
-//   },
-//   basecontainer: {
-//     width: "1500px",
-//     display: "flex",
-//     // flexDirection:'column',
-//     alignItems: "center",
-//     marginTop: "5em",
-//     // display: "flex",
-//     // background:'#cce0ff',
-//     // paddingLeft:"350px",
-//     paddingLeft: "350px",
-//     paddingTop: "100px",
-//     marginRight: "-350px",
-//     //
-//     //
-//   },
-
-//   header: {
-//     fontSize: "24px",
-//     // marginTop:"5px",
-//   },
-//   content: {
-//     display: "flex",
-//     flexDirection: "column",
-//   },
-//   form: {
-//     display: "flex",
-//     flexDirection: "column",
-//     marginTop: "2em",
-//     alignItems: "center",
-//   },
-//   formgroup: {
-//     display: "flex",
-//     flexDirection: "column",
-//     alignItems: "flex-Start",
-//     width: "fit-content",
-//     marginTop: "0.5em",
-//   },
-//   label: {
-//     fontSize: "20px",
-//   },
-  
-//   footer: {
-//     marginTop: "2em",
-//   },
-//   btn: {
-//     fontSize: "21px",
-//     padding: "5px 20px",
-//     border: 0,
-//     backgroundColor: "#b3d9ff",
-//     color: "black",
-//     borderRadius: "20px",
-//     cursor: "pointer",
-//   },
-//   apply: {
-//     fontSize: "21px",
-//     padding: "5px 20px",
-//     border: 0,
-//     color: "#3498bd",
-//     paddingBottom: "5px",
-//     cursor: "pointer",
-//   },
-//   register: {
-//     textDecoration: "underline",
-//   },
-//   main: {
-//     // width:'100%',
-//     height: "100%",
-//     display: "flex",
-//     flexDirection: "column",
-//     alignItems: "center",
-//     marginTop: "5px",
-//     // display: "flex",
-//     background: "#fff",
-//     // marginTop: "-px",
-//     paddingtop: "10px",
-//     paddingLeft: "50px",
-//     paddingRight: "50px",
-//   },
-//   img: {
-//     height: "450px",
-//     width: "480px",
-//     borderRadius: "50px",
-//   },
-//   leftimg: {
-//     // marginTop:'180px',
-//     background: "#fff",
-//     // marginLeft:"400px",
-//     // paddingtop:'50px',
-//     // paddingLeft:'50px',
-//     // paddingBottom:'50px'
-//   },
-//   input: {
-//     height: "30px",
-//     width: "250px",
-//     borderRadius: "25px",
-//     cursor: "pointer",
-//   },
-//   text: {
-//     fontSize: "20px",
-//     marginBottom: "20px",
-//     marginTop: "5px",
-//   },
-//   border: {
-//     display: "flex",
-//     // border:'solid black 1px',
-//     // borderRadius: '50px',
-//   },
-// });
-
-// const Login = () => {
-//   const classes = useStyles();
-//   const navigate = useNavigate();
-  
-//   return (
-//     <>
-//       <Header />
-//       <div className={classes.base}>
-//         <div className={classes.basecontainer}>
-//           <div className={classes.border}>
-//             <div className={classes.leftimg}>
-//               <img className={classes.img} src="./img/login2.gif" alt="" />
-//             </div>
-//             <div className={classes.main}>
-//               <div className={classes.header}>Log in</div>
-//               <div className={classes.content}>
-//                 <div className={classes.form}>
-//                   <div className={classes.formgroup}>
-//                     <label htmlFor="email" className={classes.text}>
-//                       Email
-//                     </label>
-//                     <input
-//                       className={classes.input}
-//                       type="email"
-//                       name="email"
-//                       placeholder=""
-//                       required="true"
-//                         //   minLength={10}
-//                         //   maxLength={10}
-//                     />
-//                   </div>
-//                   <div className={classes.formgroup}>
-//                     <label label htmlFor="Password" className={classes.text}>
-//                       Password
-//                     </label>
-//                     <input
-//                       className={classes.input}
-//                       type="text"
-//                       name=""
-//                       placeholder=""
-//                       required="true"
-//                     />
-//                   </div>
-//                 </div>
-//               </div>
-
-//               <div className={classes.footer}>
-//                 <button type="submit" className={classes.btn}>
-//                   Log in
-//                 </button>
-//               </div>
-//               <div className={classes.register}>
-//                 <p
-//                   type="submit"
-//                   className={classes.apply}
-//                   onClick={() => {
-//                     navigate("/register");
-//                   }}
-//                 >
-//                   Register
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-// export default Login;

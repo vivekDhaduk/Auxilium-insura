@@ -46,8 +46,6 @@ function Forgetpassword1() {
       <Header />
       <div className="basecont">
         <form className="full" onSubmit={loginUser}>
-          {/* <img className="img1" src='./image/bg2.jpg' alt="" /> */}
-
           <div className="main1">
             <div className="gif">
               <img src="../images/fpass.gif" alt="" class="animatimg" />
@@ -70,19 +68,9 @@ function Forgetpassword1() {
                   value={email.email}
                   onChange={OnInput}
                 />
-                {/*     
-        <label  for="psw"><b>OTP</b></label>
-        <div className='otp'>
-        <button className='text2' > Send Otp</button>
-        <input className="text1" type="text" placeholder="Enter OTP" name="otp" value={email.otp} onChange={OnInput} />
-        </div>
-        <br/> */}
                 <button className="text" type="submit">
                   Send Otp
                 </button>
-                {/* <label>
-          <input type="checkbox" checked="checked" name="remember"/> Remember me
-        </label> */}
               </div>
               <div className="container1">
                 <button
@@ -94,9 +82,6 @@ function Forgetpassword1() {
                 >
                   Cancel
                 </button>
-
-                {/* <span className="psw" onClick={()=>{
-                       navigate('/change')}} >Change <a className="password" href="#">password?</a></span> */}
               </div>
             </div>
           </div>
